@@ -57,3 +57,15 @@ typings/
 # dotenv environment variables file
 .env
 
+# other
+.DS_Store
+.idea/
+*.iml
+*.iws
+*.eml
+out/
+.svn
+tmp/**
+.sass-cache
+css/reveal.min.css
+js/reveal.min.js
