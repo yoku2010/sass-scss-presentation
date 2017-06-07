@@ -20,7 +20,7 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
-	<title>SASS/SCSS – CSS with superpowers</title>
+	<title>Sass/SCSS – CSS with superpowers</title>
 
 	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 	<meta name="author" content="Hakim El Hattab">
@@ -35,6 +35,9 @@
 
 	<!-- Theme used for syntax highlighting of code -->
 	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- FontAwesome -->
+	<link rel="stylesheet" href="lib/css/font-awesome.min.css">
 
 	<!-- Printing and PDF exports -->
 	<script>
@@ -59,7 +62,7 @@
 			<!-- Start -->
 			<section>
 				<section>
-					<h1>SASS/SCSS</h1>
+					<h1>Sass/SCSS</h1>
 					<h3>CSS with Superpowers</h3>
 					<p>
 						<small>Created by <a target="_blank" href="http://yoku2010.github.io/resume">Yogesh Kumar</a> / <a target="_blank" href="http://twitter.com/yoku_2010">@yoku_2010</a></small>
@@ -68,10 +71,10 @@
 				<section>
 					<h2>Let's start...</h2>
 					<ol>
-						<li>Why SASS / SCSS?</li>
+						<li>Why Sass / SCSS?</li>
 						<li>The Workflow</li>
-						<li>SASS Basics</li>
-						<li>SASS Advanced</li>
+						<li>Sass Basics</li>
+						<li>Sass Advanced</li>
 						<li>Media Queries</li>
 						<li>A Short &amp; Lovely Demo</li>
 						<li>Wrap Up</li>
@@ -83,7 +86,7 @@
 			<section>
 				<section>
 					<h2>Section - I</h2>
-					<p>Why <a target="_blank" href="http://sass-lang.com">SASS / SCSS</a>?</p>
+					<p>Why <a target="_blank" href="http://sass-lang.com">Sass / SCSS</a>?</p>
 				</section>
 				<section>
 					<h3>The Trouble with CSS</h3>
@@ -187,7 +190,7 @@
 }</code></pre>
 					</div>
 					<div class="pull-left fragment visible" style="width:49%;">
-						<strong class="red-white-bg">SASS Variables</strong>
+						<strong class="red-white-bg">Sass Variables</strong>
 						<pre><code class="sass">$white: #ffffff;
 $black: #222222; // NOT! ;)
 $eggplant: #531946;
@@ -259,7 +262,7 @@ $teal: #095169;
 }</code></pre>
 					</div>
 					<div class="pull-left fragment visible" style="width:49%;">
-						<strong class="red-white-bg">SASS Mixins</strong>
+						<strong class="red-white-bg">Sass Mixins</strong>
 						<pre><code class="sass">@mixin rounded-box {
   border-radius: 5px;
   padding: 5px 20px;
@@ -322,7 +325,7 @@ $teal: #095169;
 }</code></pre>
 					</div>
 					<div class="pull-left fragment visible" style="width:49%;">
-						<strong class="red-white-bg">SASS Nesting</strong>
+						<strong class="red-white-bg">Sass Nesting</strong>
 						<pre><code class="sass">.header {
   // ...
 
@@ -407,7 +410,7 @@ $teal: #095169;
 }</code></pre>
 					</div>
 					<div class="pull-left" style="width:49%;">
-						<strong class="red-white-bg">SASS</strong>
+						<strong class="red-white-bg">Sass</strong>
 						<pre><code class="sass">$white:        #ffffff;
 $grey:         #222222;
 $eggplant:     #531946;
@@ -467,13 +470,25 @@ $teal:         #095169;
 					</ul>
 				</section>
 				<section>
-					<h3>What is SASS / SCSS?</h3>
+					<h3>What is Sass?</h3>
 					<p>
-						Sass is an <span class="yellow">extension of CSS</span> that adds power and elegance to the basic language. It allows you to use variables, nested rules, mixins, inline imports, and more, all with a <span class="yellow">fully CSS-compatible syntax</span>. Sass helps keep large stylesheets well-organized, and get small stylesheets up and running quickly...
+						Sass is an <span class="yellow">extension of CSS</span> that adds power and elegance to the basic language. It allows you to use <span class="orange">variables</span>, <span class="orange">nested rules</span>, <span class="orange">mixins</span>, <span class="orange">inline imports</span>, and more, all with a <span class="yellow">fully CSS-compatible syntax</span>. Sass helps keep large stylesheets <span class="orange">well-organized</span>, and get small stylesheets up and running quickly...
 					</p>
-					<a class="white-red-bg" href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html" target="_blank">
-						Sass Documentation
-					</a>
+					<small><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html" target="_blank">Sass Documentation</a></small>
+				</section>
+				<section>
+					<h3>What is Sass?</h3>
+					<p>
+						<span class="pull-left">CSS <span class="yellow">Extension</span></span>
+						<span class="pull-right fragment visible">CSS <span class="yellow">Preprocessor</span></span>
+						<span class="clear-both pull-left fragment visible"><span class="orange">Sass Script</span> Language</span>
+						<span class="pull-right fragment visible"><span class="orange">Sass Script</span> Interpreter</span>
+					</p>
+					<p class="clear-both padding-top-50 fragment visible">
+						<strong class="red-white-bg">Sass</strong>
+						<i class="fa fa-arrow-right yellow"></i>
+						<strong class="white-red-bg">CSS</strong>
+					</p>
 				</section>
 				<section>
 					<h3>Features</h3>
@@ -488,8 +503,54 @@ $teal:         #095169;
 					</ul>
 				</section>
 				<section>
+					<h3><span class="white">Two</span> SassScript Syntaxes</h3>
+					<div class="pull-left" style="width:49%;">
+						<strong class="yellow">.sass (Indented)</strong>
+						<small>Original syntax; Haml-esque</small>
+						<pre><code class="sass">$black: #000
+$white: #fff
+
+.this
+  color: $black
+  background: $white
+
+.that
+  color: $white
+  background: $black
+
+.this, .that
+  display: block
+  &:hover
+    border: 1px solid</code></pre>
+					</div>
+					<div class="pull-right" style="width:49%;">
+						<strong class="orange">.scss (Sassy CSS)</strong>
+						<small>Default syntax; Valid CSS == Valid SCSS</small>
+						<pre><code class="scss">$black: #000;
+$white: #fff;
+
+.this {
+  color: $black;
+  background: $white;
+}
+
+.that {
+  color: $white;
+  background: $black;
+}
+
+.this, .that {
+  display: block;
+
+  &:hover {
+    border: 1px solid;
+  }
+}</code></pre>
+					</div>
+				</section>
+				<section>
 					<div class="left-panel">
-						<h3>SASS</h3>
+						<h3>Sass</h3>
 						<ul class="small-text">
 							<li>Original syntax</li>
 							<li>Used to be in the same gem as <a target="_blank" href="http://haml.info/">Haml</a> (siblings)</li>
@@ -503,13 +564,6 @@ $teal:         #095169;
 							<li>.sass file extension</li>
 							<li>More concise</li>
 						</ul>
-						<pre><code class="hlsass" data-trim contenteditable>
-							$font: Arial, sans-serif;
-							$font-color: #333;
-							body
-								font: 100% $font
-								color: $font-color
-						</code></pre>
 					</div>
 					<div class="right-panel">
 						<h3>SCSS</h3>
@@ -530,14 +584,6 @@ $teal:         #095169;
 							<li>Encourages use of @extend and minimizes unnecessary nesting</li>
 							<li>Lower barrier to entry for those used to CSS</li>
 						</ul>
-						<pre><code class="hlscss" data-trim contenteditable>
-							$font: Arial, sans-serif;
-							$font-color: #333;
-							body {
-								font: 100% $font
-								color: $font-color
-							}
-						</code></pre>
 					</div>
 				</section>
 			</section>
@@ -548,13 +594,48 @@ $teal:         #095169;
 					<h2>Section - II</h2>
 					<p>The Workflow</p>
 				</section>
+				<section>
+					<h3><span class="white">Sass</span> Installation</h3>
+					<strong class="orange">Ruby</strong>
+					<p><strong>OS X?</strong> Lucky you, it's preinstalled!</p>
+					<p><strong>Windows?</strong> Try <a href="https://rubyinstaller.org/" target="_blank">RubyInstaller</a></p>
+					<p><strong>Linux?</strong> You know what to do.</p>
+					<strong class="yellow">Sass</strong>
+					<p><code>$ gem install sass</code></p>
+					<small>More info at: <a href="http://sass-lang.com/install" target="_blank">sass-lang.com/install</a></small>
+					<small>C/C++ (LibSass): <a href="http://libsass.org/" target="_blank">LibSass.org</a></small>
+				</section>
+				<section>
+					<h3><span class="white">Running</span> Sass</h3>
+					<small>(aka Compiling Sass)</small>
+					<p>
+						<strong class="red-white-bg">Sass</strong>
+						<i class="fa fa-arrow-right yellow"></i>
+						<strong class="white-red-bg">CSS</strong>
+					</p>
+					<p style="padding-top:30px;">
+						<small><code>$ sass source.scss output.css</code></small>
+					</p>
+					<p>
+						<small><code>$ sass source_dir output_dir</code></small>
+					</p>
+				</section>
+				<section>
+					<h3>Sass Is <span class="white">Watching</span> You...</h3>
+					<p>
+						<small>
+							<code>$ sass --watch source.sass:output.css</code>
+						</small>
+					</p>
+					<p class="yellow">This is the best thing EVER.</p>
+				</section>
 			</section>
 
 			<!-- Section 3 -->
 			<section>
 				<section>
 					<h2>Section - III</h2>
-					<p>SASS Basics</p>
+					<p>Sass Basics</p>
 				</section>
 			</section>
 
@@ -562,7 +643,7 @@ $teal:         #095169;
 			<section>
 				<section>
 					<h2>Section - IV</h2>
-					<p>SASS Advanced</p>
+					<p>Sass Advanced</p>
 				</section>
 			</section>
 
@@ -592,10 +673,10 @@ $teal:         #095169;
 					<h3>Important Links</h3>
 					<ul>
 						<li>
-							<a href="http://sass-lang.com/guide" target="_blank">SASS documentation</a>
+							<a href="http://sass-lang.com/guide" class="roll" target="_blank"><span>Sass documentation</span></a>
 						</li>
 						<li>
-							<a href="http://thesassway.com/" target="_blank">The SASS Way</a> guides
+							<a href="http://thesassway.com/" target="_blank">The Sass Way</a> guides
 						</li>
 					</ul>
 				</section>
@@ -934,6 +1015,7 @@ Reveal.addEventListener( 'customevent', function() {
 			progress: true,
 			history: true,
 			center: true,
+			rollingLinks: true,
 
 			transition: 'slide', // none/fade/slide/convex/concave/zoom
 
