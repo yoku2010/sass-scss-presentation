@@ -601,7 +601,7 @@ $white: #fff;
 					<p><strong>Windows?</strong> Try <a href="https://rubyinstaller.org/" target="_blank">RubyInstaller</a></p>
 					<p><strong>Linux?</strong> You know what to do.</p>
 					<strong class="yellow">Sass</strong>
-					<p><code>$ gem install sass</code></p>
+					<p><code class="command">$ gem install sass</code></p>
 					<small>More info at: <a href="http://sass-lang.com/install" target="_blank">sass-lang.com/install</a></small>
 					<small>C/C++ (LibSass): <a href="http://libsass.org/" target="_blank">LibSass.org</a></small>
 				</section>
@@ -614,20 +614,47 @@ $white: #fff;
 						<strong class="white-red-bg">CSS</strong>
 					</p>
 					<p style="padding-top:30px;">
-						<small><code>$ sass source.scss output.css</code></small>
+						<small><code class="command">$ sass source.scss output.css</code></small>
 					</p>
 					<p>
-						<small><code>$ sass source_dir output_dir</code></small>
+						<small><code class="command">$ sass source_dir output_dir</code></small>
 					</p>
 				</section>
 				<section>
 					<h3>Sass Is <span class="white">Watching</span> You...</h3>
 					<p>
 						<small>
-							<code>$ sass --watch source.sass:output.css</code>
+							<code class="command">$ sass --watch source.sass:output.css</code>
 						</small>
 					</p>
 					<p class="yellow">This is the best thing EVER.</p>
+				</section>
+				<section>
+					<h3>More Sass <span class="white">Options</span></h3>
+					<p class="padding-20">
+						<small>
+							<code class="command">$ sass source.scss output.css</code><br/>
+							<span class="white">Compile source.scss to output.css. Will fail if output directory doesn't exist.</span>
+						</small>
+					</p>
+					<p class="padding-20">
+						<small>
+							<code class="command">$ sass --update source.scss:output.css</code><br/>
+							<span class="white">Compile source.scss to output.css. Will create directory if it doesn't exist.</span>
+						</small>
+					</p>
+					<p class="padding-20">
+						<small>
+							<code class="command">$ sass --watch source.scss output.css</code><br/>
+							<span class="white">Watch source.scss for changes. Will create directory if it doesn't exist.</span>
+						</small>
+					</p>
+					<p class="padding-20">
+						<small>
+							<code class="command">$ sass --style expanded source.scss:output.css</code><br/>
+							<span class="white">Adjusts output format. Options: <strong>nested</strong>, expanded, compact, compressed.</span>
+						</small>
+					</p>
 				</section>
 			</section>
 
@@ -636,6 +663,9 @@ $white: #fff;
 				<section>
 					<h2>Section - III</h2>
 					<p>Sass Basics</p>
+				</section>
+				<section>
+					
 				</section>
 			</section>
 
