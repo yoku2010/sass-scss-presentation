@@ -749,13 +749,11 @@ float: right;
         </section>
         <section>
           <h3>Nesting</h3>
-          <small>
-            <p>
+          <p>
+            <small>
               <span>Mirroring HTML nesting is SUPER easy.</span><br/>
-              <span class="fragment orange" data-fragment-index="1">Overly verbose and overly specific.</span><br/>
-              <span class="fragment yellow" data-fragment-index="3"><b>General Recommendation:</b> no more than 3 levels deep.</span>
-            </p>
-          </small>
+            </small>
+          </p>
           <div class="pull-left" style="width: 49%">
             <strong class="red-white-bg">Sass</strong>
             <pre><code contenteditable class="scss">body {
@@ -778,6 +776,8 @@ float: right;
   /* ... */
 }</code></pre>
           </div>
+          <small><span class="fragment orange" data-fragment-index="1">Overly verbose and overly specific.</span><br/>
+              <span class="fragment yellow" data-fragment-index="3"><b>General Recommendation:</b> no more than 3 levels deep.</span></small>
         </section>
 
         <!-- Sass Basics : Nesting : Parent Selectors -->
@@ -829,6 +829,424 @@ a .btn {
           <p>
             <small>The <code class="command">&</code> selector can follow other selectors.  This will <span class="yellow">override</span> the parent element's (<code class="command">&</code>) styles when it exists within the preceding selector.</small>
           </p>
+          <div class="pull-left" style="width: 49%">
+            <strong class="red-white-bg">Sass</strong>
+            <pre><code contenteditable class="scss">a {
+  .footer & {
+    text-decoration: none;
+
+    span {
+      opacity: .5;
+    }
+  }
+
+  span {
+    .navigation & {
+      display: block;
+    }
+  }
+}</code></pre>
+          </div>
+          <div class="pull-right" style="width: 49%">
+            <strong class="white-red-bg">CSS Output</strong>
+            <pre><code contenteditable class="css">.footer a {
+  text-decoration: none;
+}
+
+.footer a span {
+  opacity: .5;
+}
+
+.navigation a span {
+  display: block;
+}</code></pre>
+          </div>
+        </section>
+        <!-- Sass Basics : Nesting : Parent Selectors -->
+        <section>
+          <h3><span class="white">Nesting</span> Parent Selectors</h3>
+          <p>
+            <small>The <code class="command">&</code> selector can also be <span class="yellow">combined</span> with strings.</small><br/>
+            <small>PERFECT for BEM, child elements, states, and modifications.</small>
+          </p>
+
+          <div class="pull-left" style="width: 49%">
+              <strong class="red-white-bg">Sass</strong>
+              <pre><code contenteditable class="scss">.module {
+  &__child {
+    margin-bottom: 1em;
+  }
+
+  &--modifier {
+    display: inline;
+  }
+}</code></pre>
+            </div>
+
+            <div class="pull-right" style="width: 49%">
+              <strong class="white-red-bg">CSS Output</strong>
+              <pre><code contenteditable class="css">.module__child {
+  margin-bottom: 1em;
+}
+
+.module--modifier {
+  display: inline;
+}</code></pre>
+            </div>
+            <aside class="notes">
+              BEM entity
+              Blocks, elements, and modifiers are all called BEM entities.
+              It is a notion that can be used both to refer to an individual BEM entity and as a generic term for blocks, elements, and modifiers.
+            </aside>
+        </section>
+
+        <!-- Sass Basics : Nesting : Parent Selectors -->
+        <section>
+          <h3><span class="white">Nesting</span> Parent Selectors</h3>
+          <p>
+            <small>The <code class="command">&</code> contents can also be <span class="yellow">accessed as a string/list</span><br/>and used in SassScript.</small>
+          </p>
+
+          <div class="pull-left" style="width: 49%">
+            <strong class="red-white-bg">Sass</strong>
+            <pre><code contenteditable class="scss">.thing.thang {
+  .thung {
+    content: &;
+    content: &--mod;
+    content: selector-append(&, '--mod');
+
+    &--mod { content: 'here'; }
+  }
+}</code></pre>
+          </div>
+
+          <div class="pull-right" style="width: 49%">
+            <strong class="white-red-bg">CSS Output</strong>
+            <pre><code contenteditable class="css">.thing.thang .thung {
+  content: .thing.thang .thung;
+  content: .thing.thang .thung --mod;
+  content: .thing.thang .thung--mod;
+}
+.thing.thang .thung--mod {
+  content: 'here';
+}</code></pre>
+          </div>
+          <p class="clear-both"><small>There are a handful of additional selector methods.</small></p>
+        </section>
+
+        <!-- Sass Basics : Nesting Properties  -->
+        <section>
+          <h3><span class="white">Nesting</span> Properties</h3>
+          <p><small>You can also nest <span class="yellow">namespaced properties</span></small></p>
+
+          <div class="pull-left" style="width: 49%">
+            <strong class="red-white-bg">Sass</strong>
+            <pre><code contenteditable class="scss">a {
+  border: {
+    color: #deedee;
+    style: solid;
+    width: 2px;
+  }
+}</code></pre>
+          </div>
+
+          <div class="pull-right" style="width: 49%">
+            <strong class="red-white-bg">CSS Output</strong>
+            <pre><code contenteditable class="css">a {
+  border-color: #deedee;
+  border-style: solid;
+  border-width: 2px;
+}</code></pre>
+          </div>
+        </section>
+
+        <!-- Sass Basics : Nesting : Develop It! -->
+        <section>
+          <h3>Nesting <span class="white">Exercise</span></h3>
+
+          <div class="pull-left" style="width: 55%;">
+            <p><small class="yellow">NEST ALL THE THINGS!!</small></p>
+            <p><small><strong>BUT</strong> Don't nest too deeply!</small></p>
+            <p><small class="white"><strong>And just kidding...</strong><br/>You don't <em>need</em> to nest <em>everything</em></small></p>
+            <p><small><strong>P.S. Don't Forget</strong><br/>The parent <code>&amp;</code> selector.</small></p>
+          </div>
+
+          <div class="pull-right" style="width: 45%">
+            <pre><code contenteditable class="scss">// good
+.navigation {
+  li {//...}
+  a  {
+    //...
+    &amp;:hover { //... }
+  }
+}
+
+// bad
+body {
+  .header {
+    .navigation {
+      ul {
+        li {
+          a {
+            // ...
+          }
+        }
+      }
+    }
+  }
+}</code></pre>
+          </div>
+        </section>
+
+        <!-- Sass Basics : Imports & Organization -->
+        <section>
+          <h3>Sass Basics</h3>
+          <p>Imports &amp; Organization</p>
+        </section>
+
+        <!-- Sass Basics : Imports & Organization : Use -->
+        <section>
+          <h4><span class="white">Sass Basics</span> Imports &amp; Organization</h4>
+          <p>
+            <small>CSS <code class="command">@import</code> has always meant an <span class="yellow">extra file download</span>.</small>
+          </p>
+          <p>
+            <small>
+              <span class="yellow">Sass</span> modifies <code class="command">@import</code> to instead include the resource <span class="yellow">during compilation</span>, rather than on the client side.
+            </small>
+          </p>
+          <p class="orange">Organization OMGZZ!</p>
+          <pre><code contenteditable class="scss">@import "vars";
+
+@import "compass";
+@import "fontawesome";
+
+@import "utilities";
+
+@import "grid";
+@import "base";
+
+@import "modules/all";
+@import "pages/all";</code></pre>
+        </section>
+
+        <!-- Sass Basics : Imports & Organization : Imports -->
+        <section>
+          <h3><span class="white">Organization</span> Imports</h3>
+          <div class="pull-left" style="width: 49%">
+            <p>
+              <small>
+                <code class="command">@import</code> takes a <span class="yellow">path</span> to a Sass resource, the <span class="yellow">file extension is optional</span>.
+              </small>
+            </p>
+            <p>
+              <small>
+                These <code>@import</code>s look for resources within the <span class="yellow">main Sass file's</span> parent directory.
+              </small>
+            </p>
+          </div>
+          <div class="pull-right" style="width: 49%">
+            <pre><code contenteditable class="scss">@import "vars";
+
+@import "compass";
+@import "fontawesome";
+
+@import "utilities";
+
+@import "grid";
+@import "base";
+
+@import "modules/all";
+@import "pages/all";</code></pre>
+          </div>
+        </section>
+
+        <!-- Sass Basics : Imports & Organization : Import File Structure -->
+        <section>
+          <h3><span class="white">Imports</span> File Structure</h3>
+          <div class="pull-left" style="width: 49%">
+            <strong class="red-white-bg">application.scss</strong>
+            <pre><code contenteditable class="scss">@import "vars";
+@import "lib/compass";
+@import "lib/fontawesome";
+@import "utilities";
+@import "grid";
+@import "base";</code></pre>
+            <p><small><code class="command"><strong>$</strong> sass sass/application.scss css/application.css</code></small></p>
+          </div>
+          <div class="pull-right" style="width: 49%">
+            <small>
+              <ul>
+                <li>project_awesome
+                  <ul>
+                    <li>sass
+                      <ul>
+                        <li>lib
+                          <ul>
+                            <li>compass.scss</li>
+                            <li>fontawesome.scss</li>
+                          </ul>
+                        </li>
+                        <li>base.scss</li>
+                        <li>grid.scss</li>
+                        <li class="orange">application.scss</li>
+                        <li>utilities.scss</li>
+                        <li>vars.scss</li>
+                      </ul>
+                    </li>
+                    <li>css
+                      <ul>
+                        <li class="yellow">application.css</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </small>
+          </div>
+        </section>
+
+        <!-- Sass Basics : Imports & Comoiling Directories -->
+        <section>
+          <h3><span class="white">Imports</span> Compiling Directories</h3>
+
+          <p><small><code class="command"><strong>$</strong> sass sass/ css/</code></small></p>
+
+          <div class="pull-left" style="width: 49%">
+            <small>
+              <ul>
+                <li>sass
+                  <ul>
+                    <li>lib
+                      <ul>
+                        <li>compass.scss</li>
+                        <li>fontawesome.scss</li>
+                      </ul>
+                    </li>
+                    <li>base.scss</li>
+                    <li>grid.scss</li>
+                    <li class="green">application.scss</li>
+                    <li>utilities.scss</li>
+                    <li>vars.scss</li>
+                  </ul>
+                </li>
+              </ul>
+            </small>
+          </div>
+          <div class="pull-right" style="width: 49%">
+            <div class="pull-left" style="width: 20%">
+              <small>
+                <p><i class="fa fa-arrow-right yellow" style="font-size: 36px;"></i></p>
+                <p class="box"><i class="fa fa-arrow-right yellow" style="font-size: 36px;"></i></p>
+                <p><i class="fa fa-arrow-right yellow" style="font-size: 36px;"></i></p>
+              </small>
+            </div>
+            <ul>
+              <li><small>css
+                <ul class="red">
+                  <li>lib
+                    <ul>
+                      <li>compass.css</li>
+                      <li>fontawesome.css</li>
+                    </ul>
+                  </li>
+                  <li>base.css</li>
+                  <li>grid.css</li>
+                  <li class="yellow">application.css</li>
+                  <li>utilities.css</li>
+                  <li>vars.css</li>
+                </ul></small>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Sass Basics : Imports & Patials -->
+        <section>
+          <h3><span class="white">Imports</span> Partials</h3>
+
+          <p><small><code class="command"><strong>$</strong> sass sass/ css/</code></small></p>
+
+          <div class="pull-left" style="width: 48%">
+            <small>
+              <ul>
+                <li>sass
+                  <ul>
+                    <li>lib
+                      <ul>
+                        <li>_compass.scss</li>
+                        <li>_fontawesome.scss</li>
+                      </ul>
+                    </li>
+                    <li>_base.scss</li>
+                    <li>_grid.scss</li>
+                    <li class="green">print.scss</li>
+                    <li class="green">application.scss</li>
+                    <li>_utilities.scss</li>
+                    <li>_vars.scss</li>
+                  </ul>
+                </li>
+              </ul>
+            </small>
+          </div>
+          <div class="pull-left" style="width: 4%">
+            <p class='box'><i class="fa fa-arrow-right yellow" style="font-size: 36px;"></i></p>
+          </div>
+          <div class="pull-right" style="width: 44%">
+            <small>
+              <ul class="pull-left">
+                <li>css
+                  <ul>
+                    <li class="yellow">print.css</li>
+                    <li class="yellow">application.css</li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="pull-left padding-top-30">
+                <li>An <span class="yellow">_underscore</span> creates a partial</li>
+                <li>Partials will not compile to <code>.css</code> on their own, they <span class="yellow">must be <code>@import</code>ed</span></li>
+                <li>Partials allow us to break up our code into more <span class="yellow">modular, maintainable chunks</span>!</li>
+              </ul>
+            </small>
+          </div>
+        </section>
+
+        <!-- Sass Basics : Imports & Organization -->
+        <section>
+          <h3><span class="white">Imports</span> Organization</h3>
+          <div class="pull-left" style="width: 48%">
+            <h4 class="yellow">Common Practices</h4>
+            <small>
+              <ul class="list--tall box--small copy--small">
+                <li><code class="command">_vars.scss</code> is a separate sheet for all your variables and settings</li>
+                <li>Variables > Libraries > Base > Modules > Pages<br/><small>Modular Architecture, OOCSS, SMACSS, Atomic Design</small></li>
+                <li><code class="command">_all.scss</code> is often used to import collections of similar imports</li>
+              </ul>
+            </small>
+          </div>
+          <div class="right box" style="width: 48%">
+            <h4 class="green">application.scss</h4>
+            <pre><code contenteditable class="scss">
+              // Variables
+              @import "vars";
+
+              // Libraries
+              @import "lib/compass";
+              @import "lib/fontawesome";
+
+              // Base Styles, Utility Classes, etc.
+              @import "base/all";
+
+              // Individual Components
+              @import "modules/all";
+
+              // Page Styles
+              @import "pages/all";
+            </code></pre>
+          </div>
+          <aside class="notes">
+            <p>Ultimately, how you organize your code is up to you</p>
+          </aside>
         </section>
       </section>
 
