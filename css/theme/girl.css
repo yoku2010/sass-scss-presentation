@@ -403,3 +403,6 @@
   color: #f05b62!important;
   padding: 5px 10px!important;
 }
+ul.ul-space li {
+  padding: 10px!important;
+}
