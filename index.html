@@ -1659,7 +1659,7 @@ a {
         <!-- Sass Basics : Variables : Develop It! -->
         <section>
           <h3>Variables <span class="yellow">Exercise</span></h3>
-          <div class="box--small left" style="width: 54%">
+          <div class="pull-left" style="width: 54%">
             <p class="copy--small left-align"><span class="green">Create a <code>vars</code> partial</span> in your base directory and <code>@import</code> it in your main <code>.scss</code> file.</p>
             <p class="box--small blue"><strong>DRY Up Your Styles</strong></p>
             <p class="yellow">Add variables for things like:</p>
@@ -2411,7 +2411,7 @@ a {
         <!-- Advanced Sass : Mixins : Develop It! -->
         <section>
           <h3>Mixins <span class="yellow">Exercise</span></h3>
-          <div class="box--small left copy--small" style="width: 64%">
+          <div class="pull-left copy--small" style="width: 64%">
             <ul class="list--tall">
               <li><span class="green">Create a <code>mixins</code> partial</span> in your base directory and <code>@import</code> it in your main <code>.scss</code> file.</li>
               <li><span class="green">Create a <code>@mixin</code></span> for scaled transformations with a required scale amount argument. Include common vendor prefixes.<br />
@@ -2437,7 +2437,7 @@ a {
         <!-- Advanced Sass : Inheritance : Mixin Efficiency Flashback -->
         <section>
           <h3><span class="blue">Mixin</span> Efficiency</h3>
-          <div class="box--small left" style="width: 49%">
+          <div class="pull-left" style="width: 49%">
             <h4>Mixin Output</h4>
             <pre><code contenteditable class="css">
               .header {
@@ -3042,7 +3042,7 @@ a {
         <!-- Advanced Sass : Inheritance : Develop It! -->
         <section>
           <h3>@extend <span class="yellow">Exercise</span></h3>
-          <div class="box--small left copy--small" style="width: 50%;">
+          <div class="pull-left copy--small" style="width: 50%;">
             <ul class="list--tall">
               <li><span class="green">Create a <code>placeholders</code> partial</span> in your base directory and <code>@import</code> it in your main <code>.scss</code> file.</li>
               <li><span class="green">Create a placeholder for <code>%clearfix</code></span> and <code>@extend</code> it on the appropriate selectors.<br/>
@@ -3307,7 +3307,7 @@ a {
             );
             </code></pre>
           </div>
-          <div class="box--small right left-align copy--small" style="width: 52%">
+          <div class="pull-right copy--small" style="width: 52%">
             <ul class="list--tall">
               <li>Maps must always be <span class="green">surrounded by parentheses.</span></li>
               <li>Key-value pairs must always be <span class="green">comma separated</span>.</li>
@@ -3592,331 +3592,308 @@ a {
         </section>
         <!-- Media Queries : CSS -->
         <section>
-          <h3><span class="blue">Media Queries</span> CSS3</h3>
-          <div class="box left" style="width: 50%;">
-            <pre><code contenteditable class="css">
-              @media screen and (max-width: 500px) {
-                .sidebar {
-                  float: none;
-                  width: 100%;
-                }
-              }
-            </code></pre>
+          <h3><span class="white">Media Queries</span> CSS3</h3>
+          <div class="pull-left" style="width: 49%;">
+            <pre><code contenteditable class="css">@media screen and (max-width: 500px) {
+  .sidebar {
+    float: none;
+    width: 100%;
+  }
+}</code></pre>
           </div>
-          <div class="box right copy--small left-align" style="width: 48%;">
-            <p><span class="green">Media queries</span> allow you to <span class="green">conditionally load styles</span> based on things like page width, orientation, and even environmental lighting.</p>
-            <p class="box yellow">Responsive Web Design!</p>
-            <p>You <span class="green">nest</span> declarations <em>within</em> media queries.</p>
+          <div class="pull-right" style="width: 48%;">
+            <small>
+              <p><span class="yellow">Media queries</span> allow you to <span class="yellow">conditionally load styles</span> based on things like page width, orientation, and even environmental lighting.</p>
+              <p class="white">Responsive Web Design!</p>
+              <p>You <span class="yellow">nest</span> declarations <em>within</em> media queries.</p>
+            </small>
           </div>
-          <aside class="notes">
-            <p>Responsive web design is adapting your design to the user environment.</p>
-            <p>Media queries allow us to do that.</p>
-          </aside>
         </section>
 
         <!-- Media Queries : Sass -->
         <section>
-          <h3><span class="blue">Media Queries</span> Sass</h3>
-          <div class="box left" style="width: 52%;">
-            <pre><code contenteditable class="scss">
-              .sidebar {
-                float: left;
-                width: 35%;
+          <h3><span class="white">Media Queries</span> Sass</h3>
+          <div class="pull-left" style="width: 49%;">
+            <pre><code contenteditable class="scss">.sidebar {
+  float: left;
+  width: 35%;
 
-                @media screen and (max-width: 800px) {
-                  width: 25%;
-                }
+  @media screen and (max-width: 800px) {
+    width: 25%;
+  }
 
-                @media screen and (max-width: 500px) {
-                  float: none;
-                  width: 100%;
+  @media screen and (max-width: 500px) {
+    float: none;
+    width: 100%;
 
-                  a { display: block; }
-                }
-              }
-            </code></pre>
+    a { display: block; }
+  }
+}</code></pre>
           </div>
-          <div class="box--small right copy--small left-align" style="width: 46%;">
-            <p class="box">In <span class="yellow">Sass</span>, you can <span class="green">nest your media queries</span> under any declaration.</p>
-            <p class="blue">OMG THIS IS SO AWESOME.</p>
-            <p class="box">It becomes easy to see exactly how the module is morphing through breakpoints.</p>
+          <div class="pull-right" style="width: 49%;">
+            <small>
+              <p>In <span class="yellow">Sass</span>, you can <span class="yellow">nest your media queries</span> under any declaration.</p>
+              <p class="white">OMG THIS IS SO AWESOME.</p>
+              <p>It becomes easy to see exactly how the module is morphing through breakpoints.</p>
+            </small>
           </div>
-          <aside class="notes">
-            <p>Let's take a look at what we're outputting here...</p>
-          </aside>
         </section>
 
         <!-- Media Queries : Nesting Output -->
         <section>
-          <h3><span class="blue">Media Queries</span> Output</h3>
-          <p class="box copy--small">Media Queries <span class="yellow">"bubble up"</span> beyond their containing declarations.</p>
-          <div class="left" style="width: 52%;">
-            <h4 class="yellow">Sass</h4>
-            <pre><code contenteditable class="scss">
-              .sidebar {
-                float: left;
-                width: 35%;
+          <h3><span class="white">Media Queries</span> Output</h3>
+          <p>
+            <small>Media Queries <span class="yellow">"bubble up"</span> beyond their containing declarations.</small>
+          </p>
+          <div class="pull-left" style="width: 49%;">
+            <strong class="red-white-bg">Sass</strong>
+            <pre><code contenteditable class="scss">.sidebar {
+  float: left;
+  width: 35%;
 
-                @media screen and (max-width: 800px) {
-                  width: 25%;
-                }
+  @media screen and (max-width: 800px) {
+    width: 25%;
+  }
 
-                @media screen and (max-width: 500px) {
-                  float: none;
-                  width: 100%;
+  @media screen and (max-width: 500px) {
+    float: none;
+    width: 100%;
 
-                  a { display: block; }
-                }
-              }
-            </code></pre>
+    a { display: block; }
+  }
+}</code></pre>
           </div>
-          <div class="right" style="width: 48%;">
-            <h4>CSS Output</h4>
-            <pre><code contenteditable class="css">
-              .sidebar {
-                float: left;
-                width: 35%;
-              }
-              @media screen and (max-width: 800px) {
-                .sidebar {
-                  width: 25%;
-                }
-              }
-              @media screen and (max-width: 500px) {
-                .sidebar {
-                  float: none;
-                  width: 100%;
-                }
-                .sidebar a { display: block; }
-              }
-            </code></pre>
+          <div class="pull-right" style="width: 48%;">
+            <strong class="white-red-bg">CSS Output</strong>
+            <pre><code contenteditable class="css">.sidebar {
+  float: left;
+  width: 35%;
+}
+@media screen and (max-width: 800px) {
+  .sidebar {
+    width: 25%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .sidebar {
+    float: none;
+    width: 100%;
+  }
+  .sidebar a { display: block; }
+}</code></pre>
           </div>
-          <aside class="notes">
-            <p>Alright, there's another way we can make media queries easier on us...</p>
-          </aside>
         </section>
 
         <!-- Media Queries : Variables -->
         <section>
-          <h3><span class="blue">Media Queries</span> Variables</h3>
-          <div class="box--small left" style="width: 62%;">
-            <h4 class="yellow">Sass</h4>
-            <pre><code contenteditable class="scss">
-              $break-large: 800px;
-              $break-small: 500px;
+          <h3><span class="white">Media Queries</span> Variables</h3>
+          <div class="pull-left" style="width: 62%;">
+            <strong class="red-white-bg">Sass</strong>
+            <pre><code contenteditable class="scss">$break-large: 800px;
+$break-small: 500px;
 
-              .sidebar {
-                float: left;
-                width: 35%;
+.sidebar {
+  float: left;
+  width: 35%;
 
-                @media screen and (max-width: $break-large) {
-                  width: 25%;
-                }
+  @media screen and (max-width: $break-large) {
+    width: 25%;
+  }
 
-                @media screen and (max-width: $break-small) {
-                  float: none;
-                  width: 100%;
+  @media screen and (max-width: $break-small) {
+    float: none;
+    width: 100%;
 
-                  a { display: block; }
-                }
-              }
-            </code></pre>
+    a { display: block; }
+  }
+}</code></pre>
           </div>
-          <div class="box right copy--small left-align" style="width: 36%;">
-            <p class="box">Breakpoints are often <span class="red">obscure</span> numbers, and we <span class="red">repeat</span> them all over the place.</p>
-            <p class="box">Of course, we should <span class="green">make them variables</span>!</p>
+          <div class="pull-right" style="width: 36%;">
+            <p>
+              <small>
+                <p>Breakpoints are often <span class="yellow">obscure</span> numbers, and we <span class="red">repeat</span> them all over the place.</p>
+                <p>Of course, we should <span class="yellow">make them variables</span>!</p>
+              </small>
+            </p>
           </div>
-          <aside class="notes">
-            <p>Now we can take this one step further..</p>
-          </aside>
         </section>
 
         <!-- Media Queries : Variables II -->
         <section>
-          <h3><span class="blue">Media Queries</span> Variables II</h3>
-          <div class="box--small left" style="width: 62%;">
-            <h4 class="yellow">Sass</h4>
-            <pre><code contenteditable class="scss">
-              $mobile-med: "screen and (min-width: 480px)";
-              $tablet-port: "screen and (min-width: 768px)";
+          <h3><span class="white">Media Queries</span> Variables II</h3>
+          <div class="pull-left" style="width: 62%;">
+            <strong class="red-white-bg">Sass</strong>
+            <pre><code contenteditable class="scss">$mobile-med: "screen and (min-width: 480px)";
+$tablet-port: "screen and (min-width: 768px)";
 
-              .sidebar {
-                float: left;
-                width: 35%;
+.sidebar {
+  float: left;
+  width: 35%;
 
-                @media #{$tablet-port} {
-                  width: 25%;
-                }
+  @media #{$tablet-port} {
+    width: 25%;
+  }
 
-                @media #{$mobile-med} {
-                  float: none;
-                  width: 100%;
+  @media #{$mobile-med} {
+    float: none;
+    width: 100%;
 
-                  a { display: block; }
-                }
-              }
-            </code></pre>
+    a { display: block; }
+  }
+}</code></pre>
           </div>
-          <div class="box right copy--small left-align" style="width: 35%;">
-            <p class="box">Why not make the <span class="green">entire media query a variable</span>?</p>
-            <p>We have to <span class="yellow">interpolate</span><br/><code>#{}</code> our variables so that Sass compiles them.</p>
+          <div class="pull-right" style="width: 35%;">
+            <p>
+              <small>
+                <p>Why not make the <span class="yellow">entire media query a variable</span>?</p>
+                <p>We have to <span class="yellow">interpolate</span><br/><code class="command">#{}</code> our variables so that Sass compiles them.</p>
+              </small>
+            </p>
           </div>
-          <aside class="notes">
-            <p>If we didn't interpolate, Sass would output a string, quotes and all.</p>
-            <p>Again, we can get another step closer to simplification here..</p>
-          </aside>
         </section>
 
         <!-- Media Queries : Mixin @content -->
         <section>
-          <h3><span class="blue">Media Queries</span> @content</h3>
-          <div class="box--small left" style="width: 55%;">
-            <pre><code contenteditable class="scss">
-            @mixin respond-to($breakpoint) {
-              @if $breakpoint == tablet-large {
-                @media only screen and (max-width: $width-large) {
-                  @content;
-                }
-              } @else if $breakpoint == mobile-large {
-                @media only screen and (max-width: $width-small) {
-                  @content;
-                }
-              }
-            }
+          <h3><span class="white">Media Queries</span> @content</h3>
+          <div class="pull-left" style="width: 55%;">
+            <pre><code contenteditable class="scss">@mixin respond-to($breakpoint) {
+  @if $breakpoint == tablet-large {
+    @media only screen and (max-width: $width-large) {
+      @content;
+    }
+  } @else if $breakpoint == mobile-large {
+    @media only screen and (max-width: $width-small) {
+      @content;
+    }
+  }
+}
 
-            .sidebar {
-              width: 35%;
-              @include respond-to(tablet-large) {
-                width: 25%;
-              }
-              @include respond-to(mobile-large) {
-                width: 100%;
-                a { display: block; }
-              }
-            }
-            </code></pre>
+.sidebar {
+  width: 35%;
+  @include respond-to(tablet-large) {
+    width: 25%;
+  }
+  @include respond-to(mobile-large) {
+    width: 100%;
+    a { display: block; }
+  }
+}</code></pre>
           </div>
-          <div class="box--small right left-align" style="width: 40%;">
-            <p class="box copy--small">The <span class="green"><code>@content</code> directive</span> allows us to pass entire blocks of styles to a mixin, which then outputs that content back into the declaration that called the mixin.</p>
-            <p class="red">WAT?</p>
+          <div class="pull-right" style="width: 40%;">
+            <p>
+              <small>The <span class="yellow"><code class="command">@content</code> directive</span> allows us to pass entire blocks of styles to a mixin, which then outputs that content back into the declaration that called the mixin.</small>
+            </p>
+            <p class="yellow">WAT?</p>
           </div>
-          <aside class="notes">
-          </aside>
         </section>
 
-        <!-- Media Queries : Gotchyas -->
+        <!-- Media Queries : @extend -->
         <section>
-          <h3><span class="blue">Media Query</span> Gotchyas</h3>
-          <div class="box">
-            <p>Class &amp; placeholder declarations created outside of a<br />media query cannot be <code>@extend</code>ed within it :(</p>
-            <p class="box">Output can get rather lengthy :(</p>
+          <h3><span class="white">Media Query</span> @extended</h3>
+          <div>
+            <p>Class &amp; placeholder declarations created outside of<br />a media query cannot be <code class="command">@extend</code>ed within it :(</p>
+            <p>Output can get rather lengthy :(</p>
           </div>
         </section>
 
         <!-- Media Queries : Output -->
         <section>
-          <h3><span class="blue">Media Query</span> Output</h3>
-          <div class="box left" style="width: 56%">
-            <pre><code contenteditable class="css">
-              .sidebar {
-                float: left;
-                width: 35%;
-              }
+          <h3><span class="white">Media Query</span> Output</h3>
+          <div class="pull-left" style="width: 56%">
+            <pre><code contenteditable class="css">.sidebar {
+  float: left;
+  width: 35%;
+}
 
-              @media only screen and (max-width: 760px) {
-                .sidebar {
-                  width: 25%;
-                }
-              }
+@media only screen and (max-width: 760px) {
+  .sidebar {
+    width: 25%;
+  }
+}
 
-              @media only screen and (max-width: 400px) {
-                .sidebar {
-                  float: none;
-                  width: 100%;
-                }
-                .sidebar a {
-                  display: block;
-                }
-              }
+@media only screen and (max-width: 400px) {
+  .sidebar {
+    float: none;
+    width: 100%;
+  }
+  .sidebar a {
+    display: block;
+  }
+}
 
-              .footer {
-                height: 100px;
-              }
+.footer {
+  height: 100px;
+}
 
-              @media only screen and (max-width: 760px) {
-                .footer {
-                  height: 75px;
-                }
-              }
+@media only screen and (max-width: 760px) {
+  .footer {
+    height: 75px;
+  }
+}
 
-              @media only screen and (max-width: 400px) {
-                .footer {
-                  height: 50px;
-                }
-              }
-            </code></pre>
+@media only screen and (max-width: 400px) {
+  .footer {
+    height: 50px;
+  }
+}</code></pre>
           </div>
-          <div class="box right left-align copy--small" style="width: 42%">
-            <p class="red box">Sass doesn't group like media queries.</p>
-            <p class="yellow">Sometimes it's best <em>not</em> to nest your media queries so granularly.</p>
-            <p class="green box">Keep an eye on your output!</p>
+          <div class="pull-right" style="width: 42%">
+            <small>
+              <p>Sass doesn't group like media queries.</p>
+              <p class="yellow">Sometimes it's best <em>not</em> to nest your media queries so granularly.</p>
+              <p class="white">Keep an eye on your output!</p>
+            </small>
           </div>
-          <aside class="notes">
-            <p>Think about what our output would look like after we started adding media queries to other modules.</p>
-          </aside>
         </section>
 
         <!-- Media Queries : Develop It! -->
         <section>
           <h3>Media Queries <span class="yellow">Exercise</span></h3>
-          <p class="copy--small box--small">Turn this CSS <i class="fa fa-arrow-right blue"></i> Sass via <i>one</i> of the example methods below.<br/>
-            <small>You get to decide the best way to organize and nest things.</small></p>
-          <div class="left" style="width: 49%;">
-            <h4 class="yellow">CSS</h4>
-            <pre><code contenteditable class="css">
-              @media screen and (max-width: 480px) {
-                body     { text-align: center; }
-                .wrapper { width: 100%; }
-                .search  { margin-top: 1em; }
+          <p>
+            <small>Turn this CSS <i class="fa fa-arrow-right yellow"></i> Sass via <i>one</i> of the example methods below.<br/>
+            You get to decide the best way to organize and nest things.</small></p>
+          <div class="pull-left" style="width: 49%;">
+            <strong class="red-white-bg">CSS</strong>
+            <pre><code contenteditable class="css">@media screen and (max-width: 480px) {
+  body     { text-align: center; }
+  .wrapper { width: 100%; }
+  .search  { margin-top: 1em; }
 
-                .header nav, .footer nav,
-                .footer .copy, .search {
-                  float: none;
-                }
+  .header nav, .footer nav,
+  .footer .copy, .search {
+    float: none;
+  }
 
-                .kittens li,
-                .news, .events, .location {
-                  float: none;
-                  padding: 1em 0;
-                  width: 100%;
-                }
-              }
-            </code></pre>
+  .kittens li,
+  .news, .events, .location {
+    float: none;
+    padding: 1em 0;
+    width: 100%;
+  }
+}</code></pre>
           </div>
-          <div class="right" style="width: 49%;">
-            <h4 class="green">Sass</h4>
-            <pre><code contenteditable class="scss">
-              // Option 1 - dimension variable
-              @media screen and (max-width: $mobile-large) {
-                // ...
-              }
+          <div class="pull-right" style="width: 49%;">
+            <strong class="white-red-bg">Sass</strong>
+            <pre><code contenteditable class="scss">// Option 1 - dimension variable
+@media screen and (max-width: $mobile-large) {
+  // ...
+}
 
-              // Option 2 - media query variable
-              @media #{$tablet-small} {
-                // ...
-              }
+// Option 2 - media query variable
+@media #{$tablet-small} {
+  // ...
+}
 
-              // Option 3 - mixin with @content
-              @mixin respond-to($breakpoint) {
-                @if $breakpoint == desktop-large {
-                  @media only screen and (max-width: $width-large) {
-                    @content;
-                  }
-                } @else if $breakpoint == mobile-large {
-                  // ...
-                }
-              }
-            </code></pre>
+// Option 3 - mixin with @content
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == desktop-large {
+    @media only screen and (max-width: $width-large) {
+      @content;
+    }
+  } @else if $breakpoint == mobile-large {
+    // ...
+  }
+}</code></pre>
           </div>
         </section>
       </section>
@@ -3929,28 +3906,28 @@ a {
         </section>
         <!-- Modular Architecture : Explained -->
         <section>
-          <h3><span class="blue">Modular Architecture</span> Explained</h3>
-          <p class="box copy--small">Modular architecture is the <em>abstraction of repetition</em> into "objects".</p>
-          <ul class="list--tall">
-            <li>Objects / <span class="green">Modules</span> / Blocks<br />
+          <h3><span class="white">Modular Architecture</span> Explained</h3>
+          <p>
+            <small>
+              Modular architecture is the <em>abstraction of repetition</em> into "objects".
+            </small>
+          </p>
+          <ul>
+            <li>Objects / <span class="yellow">Modules</span> / Blocks<br />
               <small><code>.header</code>, <code>.footer</code>, <code>.comment</code>, <code>.button</code>, etc.</small>
             </li>
-            <li><span class="green">Parent - Child</span> Relationships<br />
+            <li><span class="yellow">Parent - Child</span> Relationships<br />
               <small><code>.media</code>, <code>.media__img</code>, <code>.media__body</code>, etc.</small>
             </li>
-            <li><span class="green">Modifiers &amp; States</span><br />
+            <li><span class="yellow">Modifiers &amp; States</span><br />
               <small><code>.btn--primary</code>, <code>.btn--small</code>, <code>.btn.is-selected</code>, etc.</small>
             </li>
           </ul>
-          <aside class="notes">
-            <p>It's a programmatic approach to styles.</p>
-            <p>3 parts to these objects : modules, parent-child relationships, and modifiers</p>
-          </aside>
         </section>
 
         <!-- Modular Architecture : Methodology -->
         <section>
-          <h4><span class="blue">Modular Architecture</span> Methodology</h4>
+          <h4><span class="white">Modular Architecture</span> Methodology</h4>
           <div>
             <ul class="box list--tall">
               <li><span class="yellow">Thinking</span> in <span class="green">modules</span> with various <span class="green">states</span>.<br />
@@ -3965,76 +3942,38 @@ a {
               </li>
             </ul>
           </div>
-          <aside class="notes">
-            <p>2 key components to making this work : classes and naming conventions</p>
-          </aside>
         </section>
 
         <!-- Modular Architecture : Goals -->
         <section>
-          <h3><span class="blue">Modular Architecture</span> Goals</h3>
+          <h3><span class="white">Modular Architecture</span> Goals</h3>
           <ul class="box--small list--tall">
-            <li><span class="green">Modularity</span><br />
+            <li><span class="yellow">Modularity</span><br />
               <small>Added new page. Wrote 0 lines of CSS. <i class="fa fa-thumbs-o-up"></i></small>
             </li>
-            <li><span class="green">Scalability</span><br />
+            <li><span class="yellow">Scalability</span><br />
               <small>I got 99 problems, but specificity ain't one.</small>
             </li>
-            <li><span class="green">Maintainability</span><br />
+            <li><span class="yellow">Maintainability</span><br />
               <small>Oh, you wanted a <em>big</em> button? <code>.btn--large</code>. BOOM.</small>
             </li>
-            <li><span class="green">DRY &amp; Organized</span><br />
+            <li><span class="yellow">DRY &amp; Organized</span><br />
               <small>That's just plain smart.</small></li>
-          </ul>
-          <aside class="notes">
-            <p>goals are 3-fold</p>
-            <p><strong>modularity</strong>: patterns, categorization</p>
-            <p><strong>scalability</strong>: cascade is king</p>
-            <p><strong>maintainability</strong>: modules are the basis for new pages, we might not need to write any new CSS</p>
-            <p><strong>DRY</strong>: REUSE</p>
-            <p>many people take a custom approach, there are several established frameworks...</p>
-          </aside>
-        </section>
-
-        <!-- Modular Architecture : Methodologies -->
-        <section>
-          <h4><span class="blue">Modular Architecture</span> Methodologies</h4>
-          <ul class="box list--tall left copy--small" style="width: 48%">
-            <li><a href="https://github.com/stubbornella/oocss/wiki" target="_blank">OOCSS</a> Nicole Sullivan<br />
-              <small><em>Object Oriented CSS</em><br />
-                Structure vs. Skin &nbsp; | &nbsp; Container vs. Content
-              </small><br /><br />
-            </li>
-            <li><a href="http://smacss.com/" target="_blank">SMACSS</a> Jonathan Snook<br />
-              <small><em>Scalable and Modular Architecture for CSS</em><br />
-                Base > Layout > Module > State > Theme
-              </small><br /><br />
-            </li>
-            <li><a href="http://bradfrostweb.com/blog/post/atomic-web-design/" target="_blank">Atomic Design</a> Brad Frost<br />
-              <small>Atoms > Molecules > Organisms > Templates > Pages</small>
-            </li>
-          </ul>
-          <ul class="box list--tall right copy--small" style="width: 42%">
-            <li><a href="http://bem.info/method/definitions/" target="_blank">BEM</a> Yandex<br />
-              <small>.block__element--modifier</small>
-            </li>
-            <li class="copy--small"><a href="http://vimeo.com/38063798" target="_blank">DRY CSS</a> Jeremy Clarke</li>
-            <li class="copy--small"><a href="http://mvcss.github.io/" target="_blank">MVCSS</a> Envy Labs</li>
-            <li class="copy--small"><a href="https://speakerdeck.com/andyhume/css-for-grown-ups-maturing-best-practises" target="_blank">CSS for Grown Ups</a> Andy Hume</li>
-            <li class="copy--small">etc., etc., etc.</li>
           </ul>
         </section>
 
         <!-- Modular Architecture : Resources -->
         <section>
-          <h3><span class="blue">Modular Architecture</span> Resources</h3>
-          <ul class="list--tall box copy--small">
-            <li><a href="http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/" target="_blank">An Introduction To Object Oriented CSS</a></li>
-            <li><a href="http://ianstormtaylor.com/oocss-plus-sass-is-the-best-way-to-css/" target="_blank">OOCSS + Sass = The best way to CSS</a></li>
-            <li><a href="http://www.sitepoint.com/css-architectures-scalable-and-modular-approaches/" target="_blank">CSS Architectures: Scalable and Modular Approaches</a></li>
-            <li><a href="http://www.creativebloq.com/css3/create-modular-and-scalable-css-9134351" target="_blank">4 ways to create CSS that's modular and scalable</a></li>
-            <li><a href="http://thesassway.com/advanced/modular-css-naming-conventions" target="_blank">Modular CSS Naming Conventions</a></li>
-          </ul>
+          <h3><span class="white">Modular Architecture</span> Resources</h3>
+          <small>
+            <ul>
+              <li><a href="http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/" target="_blank">An Introduction To Object Oriented CSS</a></li>
+              <li><a href="http://ianstormtaylor.com/oocss-plus-sass-is-the-best-way-to-css/" target="_blank">OOCSS + Sass = The best way to CSS</a></li>
+              <li><a href="http://www.sitepoint.com/css-architectures-scalable-and-modular-approaches/" target="_blank">CSS Architectures: Scalable and Modular Approaches</a></li>
+              <li><a href="http://www.creativebloq.com/css3/create-modular-and-scalable-css-9134351" target="_blank">4 ways to create CSS that's modular and scalable</a></li>
+              <li><a href="http://thesassway.com/advanced/modular-css-naming-conventions" target="_blank">Modular CSS Naming Conventions</a></li>
+            </ul>
+          </small>
         </section>
       </section>
 
@@ -4063,9 +4002,6 @@ a {
             <li><span class="green">Typography</span> pattern tools.</li>
             <li>Lots of other utilities!</li>
           </ul>
-          <aside class="notes">
-            <p>Newest version will check caniuse.com for the most up to date prefixes</p>
-          </aside>
         </section>
 
         <!-- Wrap Up : Bourbon -->
@@ -4091,7 +4027,6 @@ a {
             <li><span class="yellow">Grid</span> mixins!</li>
             <li>Very flexible.</li>
           </ul>
-          <aside class="notes">Because it's @mixin based, you can avoid cluttering up your markup with non-semantic grid classes</aside>
         </section>
 
         <!-- Wrap Up : More -->
@@ -4115,10 +4050,6 @@ a {
             <li><a target="_blank" href="http://mhs.github.io/scout-app/">Scout</a><br /><small>Self-contained Ruby environment.</small></li>
             <li>More at the <a href="http://sass-lang.com/install">Sass Install</a> page.</li>
           </ul>
-          <aside class="notes">
-            <p>If you're not a fan of the command line, we've got apps for that.</p>
-            <p>ANNND with that, let's take a second to rejoice, because we've just made it through SassShop!</p>
-          </aside>
         </section>
 
         <!-- Wrap Up : Important Links -->
