@@ -3927,6 +3927,115 @@ a {
           <h2>Section - VI</h2>
           <p>Modular Architecture</p>
         </section>
+        <!-- Modular Architecture : Explained -->
+        <section>
+          <h3><span class="blue">Modular Architecture</span> Explained</h3>
+          <p class="box copy--small">Modular architecture is the <em>abstraction of repetition</em> into "objects".</p>
+          <ul class="list--tall">
+            <li>Objects / <span class="green">Modules</span> / Blocks<br />
+              <small><code>.header</code>, <code>.footer</code>, <code>.comment</code>, <code>.button</code>, etc.</small>
+            </li>
+            <li><span class="green">Parent - Child</span> Relationships<br />
+              <small><code>.media</code>, <code>.media__img</code>, <code>.media__body</code>, etc.</small>
+            </li>
+            <li><span class="green">Modifiers &amp; States</span><br />
+              <small><code>.btn--primary</code>, <code>.btn--small</code>, <code>.btn.is-selected</code>, etc.</small>
+            </li>
+          </ul>
+          <aside class="notes">
+            <p>It's a programmatic approach to styles.</p>
+            <p>3 parts to these objects : modules, parent-child relationships, and modifiers</p>
+          </aside>
+        </section>
+
+        <!-- Modular Architecture : Methodology -->
+        <section>
+          <h4><span class="blue">Modular Architecture</span> Methodology</h4>
+          <div>
+            <ul class="box list--tall">
+              <li><span class="yellow">Thinking</span> in <span class="green">modules</span> with various <span class="green">states</span>.<br />
+                <small><code>.btn</code>, <code>.btn--primary</code>, <code>.btn--disabled</code></small>
+              </li>
+              <li><span class="yellow">Classes</span> VS. <span class="red">IDs</span> VS. <span class="red">Child Selectors</span><br />
+                <small>Take that, specificity!</small>
+              </li>
+              <li><span class="yellow">Naming</span> Conventions<br />
+                <small>Semantic <code>.content</code>, <code>.news__title</code>, <code>.callNow</code><br />
+                Presentational <code>.grid__col--9</code>, <code>.btn--small</code>, <code>.color--primary</code></small>
+              </li>
+            </ul>
+          </div>
+          <aside class="notes">
+            <p>2 key components to making this work : classes and naming conventions</p>
+          </aside>
+        </section>
+
+        <!-- Modular Architecture : Goals -->
+        <section>
+          <h3><span class="blue">Modular Architecture</span> Goals</h3>
+          <ul class="box--small list--tall">
+            <li><span class="green">Modularity</span><br />
+              <small>Added new page. Wrote 0 lines of CSS. <i class="fa fa-thumbs-o-up"></i></small>
+            </li>
+            <li><span class="green">Scalability</span><br />
+              <small>I got 99 problems, but specificity ain't one.</small>
+            </li>
+            <li><span class="green">Maintainability</span><br />
+              <small>Oh, you wanted a <em>big</em> button? <code>.btn--large</code>. BOOM.</small>
+            </li>
+            <li><span class="green">DRY &amp; Organized</span><br />
+              <small>That's just plain smart.</small></li>
+          </ul>
+          <aside class="notes">
+            <p>goals are 3-fold</p>
+            <p><strong>modularity</strong>: patterns, categorization</p>
+            <p><strong>scalability</strong>: cascade is king</p>
+            <p><strong>maintainability</strong>: modules are the basis for new pages, we might not need to write any new CSS</p>
+            <p><strong>DRY</strong>: REUSE</p>
+            <p>many people take a custom approach, there are several established frameworks...</p>
+          </aside>
+        </section>
+
+        <!-- Modular Architecture : Methodologies -->
+        <section>
+          <h4><span class="blue">Modular Architecture</span> Methodologies</h4>
+          <ul class="box list--tall left copy--small" style="width: 48%">
+            <li><a href="https://github.com/stubbornella/oocss/wiki" target="_blank">OOCSS</a> Nicole Sullivan<br />
+              <small><em>Object Oriented CSS</em><br />
+                Structure vs. Skin &nbsp; | &nbsp; Container vs. Content
+              </small><br /><br />
+            </li>
+            <li><a href="http://smacss.com/" target="_blank">SMACSS</a> Jonathan Snook<br />
+              <small><em>Scalable and Modular Architecture for CSS</em><br />
+                Base > Layout > Module > State > Theme
+              </small><br /><br />
+            </li>
+            <li><a href="http://bradfrostweb.com/blog/post/atomic-web-design/" target="_blank">Atomic Design</a> Brad Frost<br />
+              <small>Atoms > Molecules > Organisms > Templates > Pages</small>
+            </li>
+          </ul>
+          <ul class="box list--tall right copy--small" style="width: 42%">
+            <li><a href="http://bem.info/method/definitions/" target="_blank">BEM</a> Yandex<br />
+              <small>.block__element--modifier</small>
+            </li>
+            <li class="copy--small"><a href="http://vimeo.com/38063798" target="_blank">DRY CSS</a> Jeremy Clarke</li>
+            <li class="copy--small"><a href="http://mvcss.github.io/" target="_blank">MVCSS</a> Envy Labs</li>
+            <li class="copy--small"><a href="https://speakerdeck.com/andyhume/css-for-grown-ups-maturing-best-practises" target="_blank">CSS for Grown Ups</a> Andy Hume</li>
+            <li class="copy--small">etc., etc., etc.</li>
+          </ul>
+        </section>
+
+        <!-- Modular Architecture : Resources -->
+        <section>
+          <h3><span class="blue">Modular Architecture</span> Resources</h3>
+          <ul class="list--tall box copy--small">
+            <li><a href="http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/" target="_blank">An Introduction To Object Oriented CSS</a></li>
+            <li><a href="http://ianstormtaylor.com/oocss-plus-sass-is-the-best-way-to-css/" target="_blank">OOCSS + Sass = The best way to CSS</a></li>
+            <li><a href="http://www.sitepoint.com/css-architectures-scalable-and-modular-approaches/" target="_blank">CSS Architectures: Scalable and Modular Approaches</a></li>
+            <li><a href="http://www.creativebloq.com/css3/create-modular-and-scalable-css-9134351" target="_blank">4 ways to create CSS that's modular and scalable</a></li>
+            <li><a href="http://thesassway.com/advanced/modular-css-naming-conventions" target="_blank">Modular CSS Naming Conventions</a></li>
+          </ul>
+        </section>
       </section>
 
       <!-- Section 7 -->
@@ -3943,16 +4052,98 @@ a {
           <h2>Section - VIII</h2>
           <p>Wrap Up</p>
         </section>
+        <!-- Wrap Up : Compass -->
+        <section>
+          <h3><span class="blue">Libraries</span> Compass</h3>
+          <a href="http://compass-style.org/" target="_blank"><img class="box" src="img/compass.png" style="border: none; box-shadow: none;" /></a>
+          <p class="copy--small">"Compass is an open-source CSS Authoring Framework." ~ <a href="http://compass-style.org/" target="
+          _blank">Compass</a></p>
+          <ul class="box">
+            <li><span class="yellow">CSS3</span> mixins!</li>
+            <li><span class="green">Typography</span> pattern tools.</li>
+            <li>Lots of other utilities!</li>
+          </ul>
+          <aside class="notes">
+            <p>Newest version will check caniuse.com for the most up to date prefixes</p>
+          </aside>
+        </section>
+
+        <!-- Wrap Up : Bourbon -->
+        <section>
+          <h3><span class="blue">Libraries</span> Bourbon</h3>
+          <a href="http://bourbon.io/" target="_blank"><img class="box" src="img/bourbon.png" style="border: none; box-shadow: none;" /></a>
+          <p class="copy--small">"A simple and lightweight mixin library for Sass." ~ <a href="http://bourbon.io/" target="
+          _blank">Bourbon</a></p>
+          <ul class="box">
+            <li><span class="yellow">CSS3</span> mixins!</li>
+            <li><span class="green">Vanilla</span> styles.</li>
+            <li>Super slim.</li>
+            <li>No configuration.</li>
+          </ul>
+        </section>
+
+        <!-- Wrap Up : Susy -->
+        <section>
+          <h3><span class="blue">Libraries</span> Susy</h3>
+          <p class="box"><a href="http://susy.oddbird.net/" target="_blank"><img src="img/susy.png" style="padding: 0;" /></a></p>
+          <p class="copy--small">"Responsive grids for Compass." ~ <a href="http://susy.oddbird.net/" target="_blank">Susy</a></p>
+          <ul class="box">
+            <li><span class="yellow">Grid</span> mixins!</li>
+            <li>Very flexible.</li>
+          </ul>
+          <aside class="notes">Because it's @mixin based, you can avoid cluttering up your markup with non-semantic grid classes</aside>
+        </section>
+
+        <!-- Wrap Up : More -->
+        <section>
+          <h3><span class="blue">Libraries</span> A Few More</h3>
+          <ul class="box list--tall copy--small">
+            <li><a href="https://github.com/JohnAlbin/normalize.css-with-sass-or-compass" target="_blank">Normalize.css w/ Sass or Compass</a></li>
+            <li><a href="https://github.com/Team-Sass/modular-scale" target="_blank">Modular Scale</a> (Compass Extension)</li>
+            <li><a href="http://breakpoint-sass.com/" target="_blank">Breakpoint</a> (Compass Extension)</li>
+            <li><a href="http://foundation.zurb.com/" target="_blank">Foundation</a>  or <a href="https://github.com/thomas-mcdonald/bootstrap-sass">Bootstrap Sass</a></li>
+            <li><em>And soooo many more at <a href="http://www.sache.in/" target="_blank">Sache.in</a></em></li>
+          </ul>
+        </section>
+
+        <!-- Wrap Up : Tools -->
+        <section>
+          <h3><span class="blue">Tools</span> GUIs</h3>
+          <ul class="box list--tall">
+            <li><a target="_blank" href="http://incident57.com/codekit/">CodeKit</a> (OS X)<br /><small>"It's like steroids for developers."</small></li>
+            <li><a target="_blank" href="http://compass.kkbox.com/">Compass.app</a><br /><small>Compilation + live reload from the menubar.</small></li>
+            <li><a target="_blank" href="http://mhs.github.io/scout-app/">Scout</a><br /><small>Self-contained Ruby environment.</small></li>
+            <li>More at the <a href="http://sass-lang.com/install">Sass Install</a> page.</li>
+          </ul>
+          <aside class="notes">
+            <p>If you're not a fan of the command line, we've got apps for that.</p>
+            <p>ANNND with that, let's take a second to rejoice, because we've just made it through SassShop!</p>
+          </aside>
+        </section>
+
+        <!-- Wrap Up : Important Links -->
         <section>
           <h3>Important Links</h3>
           <ul>
             <li>
-              <a href="http://sass-lang.com/guide" class="roll" target="_blank"><span>Sass documentation</span></a>
+              <a href="http://sass-lang.com/guide" target="_blank">Sass documentation</a>
             </li>
             <li>
               <a href="http://thesassway.com/" target="_blank">The Sass Way</a> guides
             </li>
           </ul>
+        </section>
+
+        <!-- Wrap Up: Sass Questions? -->
+        <section>
+          <h3><span class="white">Sass</span> Questions?</h3>
+          <p>I'm here to help</p>
+          <p>
+            <small><a href="mailto:yoku2010@gmail.com">yoku2010@gmail.com</a></small>
+          </p>
+          <p>
+            <small><a href="http://twitter.com/yoku_2010" target="_blank">@yoku_2010</a></small>
+          </p>
         </section>
       </section>
     </div>
