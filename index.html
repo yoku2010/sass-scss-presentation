@@ -1473,214 +1473,185 @@ a {
         <!-- Sass Basics : Variables : Scope -->
         <section>
           <h3><span class="white">Variable</span> Scope</h3>
+          <div class="pull-left" style="width: 54%;">
+            <strong class="red-white-bg">Sass</strong>
+            <pre><code contenteditable class="scss">$border-width: 4px; // Global
 
-          <div class="pull-left" style="width: 46%;">
-            <p class="box--small copy--small">Variables are only available within the level of nested selectors where they're defined.</p>
-            <p class="copy--small">If they're defined outside of any nested selectors, they're available everywhere.</p>
+a {
+  $color: orange;   // Local
+  border: $border-width solid $color;
+}
+
+p {
+  border: $border-width solid $color;
+  // ERROR!! Undefined variable "$color"
+}</code></pre>
+          </div>
+
+          <div class="pull-right" style="width: 46%;">
+            <p>
+              <small>Variables are only available within the level of nested selectors where they're defined.</small>
+            </p>
+            <p>
+              <small>If they're defined outside of any nested selectors, they're available everywhere.</small>
+            </p>
             <p class="box--small"><cite><small>~ <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variables_" target="_blank">Sass Documentation</a></small></cite></p>
           </div>
-
-          <div class="right box--small" style="width: 54%;">
-            <h4 class="yellow">Sass</h4>
-            <pre><code contenteditable class="scss">
-              $border-width: 4px; // Global
-
-              a {
-                $color: orange;   // Local
-                border: $border-width solid $color;
-              }
-
-              p {
-                border: $border-width solid $color;
-                // ERROR!! Undefined variable "$color"
-              }
-            </code></pre>
-          </div>
-
-          <aside class="notes">
-            <p>This is sort of a global / local setup</p>
-            <p>Globals are a bit more flexible, let's take a look</p>
-          </aside>
         </section>
 
         <!-- Sass Basics : Variables : Interpolation -->
         <section>
           <h3><span class="white">Variable</span> Interpolation</h3>
-            <p class='box copy--small'>Variables can be injected into <span class="green">selectors,<br />property names and values, and strings</span> via <code>#{$variable}</code></p>
-          <div class=" left align-left" style="width: 52%">
-            <h4 class="yellow">Sass</h4>
-            <pre><code contenteditable class="scss">
-              $side: left;
+            <p><small>Variables can be injected into <span class="green">selectors,<br />property names and values, and strings</span> via <code class="command">#{$variable}</code></small></p>
+          <div class="pull-left" style="width: 52%">
+            <strong class="red-white-bg">Sass</strong>
+            <pre><code contenteditable class="scss">$side: left;
 
-              .box-#{$side} {
-                border-#{$side}: 1px solid #ccc;
+.box-#{$side} {
+  border-#{$side}: 1px solid #ccc;
 
-                &:before {
-                  content: "It's on the #{$side} side";
-                }
-              }
-            </code></pre>
+  &:before {
+    content: "It's on the #{$side} side";
+  }
+}</code></pre>
           </div>
-          <div class=" right" style="width: 48%">
-            <h4>CSS Output</h4>
-            <pre><code contenteditable class="css">
-              .box-left {
-                border-left: 1px solid #ccc;
-              }
+          <div class="pull-right" style="width: 48%">
+            <strong class="white-red-bg">CSS</strong>
+            <pre><code contenteditable class="css">.box-left {
+  border-left: 1px solid #ccc;
+}
 
-              .box-left:before {
-                content: "It's on the left side";
-              }
-            </code></pre>
+.box-left:before {
+  content: "It's on the left side";
+}</code></pre>
           </div>
-
-          <aside class="notes">
-            <p>We'll see how this can become pretty handy later on</p>
-          </aside>
         </section>
 
         <!-- Sass Basicx : Variables : Modular Naming -->
         <section>
           <h3><span class="white">PROTIP</span> Modular Naming</h3>
           <div class="pull-left" style="width: 49%">
-            <h4 class="green">OK Variables</h4>
-            <pre><code contenteditable class="scss">
-              $white: #ffffff;
-              $black: #222222;
-              $eggplant: #531946;
-              $eggplantDark: #30162B;
-              $teal: #095169;
+            <strong class="red-white-bg">OK Variables</strong>
+            <pre><code contenteditable class="scss">$white: #ffffff;
+$black: #222222;
+$eggplant: #531946;
+$eggplantDark: #30162B;
+$teal: #095169;
 
-              .header {
-                background-color: $eggplant;
-              }
-              .header a {
-                color: $white;
-              }
-              .header a:hover {
-                color: $teal;
-              }
+.header {
+  background-color: $eggplant;
+}
+.header a {
+  color: $white;
+}
+.header a:hover {
+  color: $teal;
+}
 
-              .footer {
-                background-color: $eggplant-dark;
-                color: $white;
-              }
-              .footer a {
-                color: $teal;
-              }
-              .footer a:hover {
-                color: $white;
-              }
+.footer {
+  background-color: $eggplant-dark;
+  color: $white;
+}
+.footer a {
+  color: $teal;
+}
+.footer a:hover {
+  color: $white;
+}
 
-              .feature a {
-                background-color: $eggplant-dark;
-                color: $white;
-              }
+.feature a {
+  background-color: $eggplant-dark;
+  color: $white;
+}
 
-              .feature a:hover {
-                color: $eggplant;
-              }
+.feature a:hover {
+  color: $eggplant;
+}
 
-              .content {
-                background-color: $white;
-                color: $black;
-              }
-            </code></pre>
+.content {
+  background-color: $white;
+  color: $black;
+}</code></pre>
           </div>
-          <div class="fragment pull-right" style="width: 49%">
-            <h4 class="yellow">Better Variables</h4>
-            <pre><code contenteditable class="scss">
-              // Descriptive Colors
-              $white:        #ffffff;
-              $grey:         #222222;
-              $eggplant:     #531946;
-              $eggplantDark: #30162B;
-              $teal:         #095169;
+          <div class="pull-right" style="width: 49%">
+            <strong class="white-red-bg">Better Variables</strong>
+            <pre><code contenteditable class="scss">// Descriptive Colors
+$white:        #ffffff;
+$grey:         #222222;
+$eggplant:     #531946;
+$eggplantDark: #30162B;
+$teal:         #095169;
 
-              // Functional Colors
-              $header--background:          $eggplant;
-              $header__logo--color:         $white;
-              $header__logo--color--hover:  $teal;
+// Functional Colors
+$header--background:          $eggplant;
+$header__logo--color:         $white;
+$header__logo--color--hover:  $teal;
 
-              $footer--background:          $eggplant--dark;
-              $footer--color:               $white;
-              $footer__nav--color:          $teal;
-              $footer__nav--color--hover:   $white;
+$footer--background:          $eggplant--dark;
+$footer--color:               $white;
+$footer__nav--color:          $teal;
+$footer__nav--color--hover:   $white;
 
-              $content--background:         $white;
-              $content--color:              $grey;
+$content--background:         $white;
+$content--color:              $grey;
 
-              $feature__link--background:   $eggplant--dark;
-              $feature__link--color:        $white;
-              $feature__link--color--hover: $eggplant;
+$feature__link--background:   $eggplant--dark;
+$feature__link--color:        $white;
+$feature__link--color--hover: $eggplant;
 
-              .header {
-                background-color: $header--background;
-              }
-              .header a {
-                color: $header__logo--color;
-              }
-              .header a:hover {
-                color: $header__logo--color--hover;
-              }
+.header {
+  background-color: $header--background;
+}
+.header a {
+  color: $header__logo--color;
+}
+.header a:hover {
+  color: $header__logo--color--hover;
+}
 
-              .footer {
-                background-color: $footer--background;
-                color: $footer--color;
-              }
-              .footer a {
-                color: $footer__nav--color;
-              }
-              .footer a:hover {
-                color: $footer__nav--color--hover;
-              }
+.footer {
+  background-color: $footer--background;
+  color: $footer--color;
+}
+.footer a {
+  color: $footer__nav--color;
+}
+.footer a:hover {
+  color: $footer__nav--color--hover;
+}
 
-              .feature a {
-                background-color: $feature__link--background;
-                color: $feature__link--color;
-              }
+.feature a {
+  background-color: $feature__link--background;
+  color: $feature__link--color;
+}
 
-              .feature a:hover {
-                color: $eggplant;
-              }
+.feature a:hover {
+  color: $eggplant;
+}
 
-              .content {
-                background-color: $content--background;
-                color: $content--color;
-              }
-            </code></pre>
+.content {
+  background-color: $content--background;
+  color: $content--color;
+}</code></pre>
           </div>
-
-          <aside class="notes">
-            <p>You want to be crafty with naming, but also don't spend too much time worrying about them, they're easy enough to update later once patterns become more apparent</p>
-          </aside>
         </section>
 
         <!-- Sass Basics : Variables : Develop It! -->
         <section>
           <h3>Variables <span class="yellow">Exercise</span></h3>
-          <div class="pull-left" style="width: 54%">
-            <p class="copy--small left-align"><span class="green">Create a <code>vars</code> partial</span> in your base directory and <code>@import</code> it in your main <code>.scss</code> file.</p>
-            <p class="box--small blue"><strong>DRY Up Your Styles</strong></p>
+          <div class="pull-left" style="width: 100%">
+            <p><span class="green">Create a <code class="command">vars</code> partial</span> in your base directory and <code class="command">@import</code> it in your main <code class="command">.scss</code> file.</p>
+            <p><strong class="orange">DRY Up Your Styles</strong></p>
             <p class="yellow">Add variables for things like:</p>
-            <ul class="copy--small">
-              <li>colors values</li>
-              <li>font family</li>
-              <li>border width</li>
-              <li>border radius</li>
-            </ul>
+            <small>
+              <ul>
+                <li>colors values</li>
+                <li>font family</li>
+                <li>border width</li>
+                <li>border radius</li>
+              </ul>
+            </small>
           </div>
-          <div class="right" style="width: 46%">
-            <p class="box--small red">Repetitious values.</p>
-            <p class="red">Arbitrary values.<br/><small class="grey">(Code smells.)</small></p>
-            <img src="images/onlyone.jpg" style="width: 60%; margin: .5em auto;" />
-          </div>
-
-          <p><small><code>sass --watch sass/application.scss:css/application.css</code></small></p>
-
-          <aside class="notes">
-            <p>So we're not going to focus too much on globals or overrides or interpolation at this stage, let's just get comfortable with setting and using variables</p>
-          </aside>
         </section>
 
 
@@ -1694,149 +1665,133 @@ a {
         <section>
           <h3><span class="white">Sass Basics</span> Math Operators</h3>
           <div class="pull-left" style="width: 48%">
-            <ul class="list--tall">
-              <li>Sass allows us to do <span class="green">basic math operations</span>*, like:
-                <ul>
-                  <li><code>+</code> addition</li>
-                  <li><code>-</code> subtraction</li>
-                  <li><code>*</code> multiplication</li>
-                  <li><code>/</code> division</li>
-                  <li><code>%</code> modulus<br /><small>(remainder from division)</small></li>
-                </ul>
-              </li>
-              <li>AND <span class="green">string concatenation</span></li>
-            </ul>
+            <small>
+              <ul>
+                <li>Sass allows us to do <span class="yellow">basic math operations</span>*, like:
+                  <ul>
+                    <li><code>+</code> addition</li>
+                    <li><code>-</code> subtraction</li>
+                    <li><code>*</code> multiplication</li>
+                    <li><code>/</code> division</li>
+                    <li><code>%</code> modulus<br /><small>(remainder from division)</small></li>
+                  </ul>
+                </li>
+                <li>AND <span class="yellow">string concatenation</span></li>
+              </ul>
+            </small>
+            <p><small class="white">* Sass attempts to operate on mismatched units, but will throw an error if incompatible</small></p>
+            <p><small><span class="yellow">Good:</span> <code>20px * 2</code> &nbsp; | &nbsp; <span class="red">Bad:</span> <code>20px + 4em</code></small></p>
           </div>
-          <div class="box--small right" style="width: 48%">
-            <pre><code contenteditable class="scss">
-              $title: "SassShop";
-              $base-font-size: 16px;
-              $padding-default: 2em;
+          <div class="pull-right" style="width: 48%">
+            <pre><code contenteditable class="scss">$title: "SassShop";
+$base-font-size: 16px;
+$padding-default: 2em;
 
-              .header {
-                padding: $padding-default / 2;
-                font-size: $base-font-size * 2;
+.header {
+  padding: $padding-default / 2;
+  font-size: $base-font-size * 2;
 
-                &:before {
-                  content: "Welcome to " + $title;
-                }
-              }
-            </code></pre><br />
-            <p><small>* Sass attempts to operate on mismatched units, but will throw an error if incompatible</small></p>
-            <p><small><span class="green">Good:</span> <code>20px * 2</code> &nbsp; | &nbsp; <span class="red">Bad:</span> <code>20px + 4em</code></small></p>
+  &:before {
+    content: "Welcome to " + $title;
+  }
+}</code></pre>
+            <p>
+              <small>
+                This includes operations on <span class="green">numbers with units</span> (px, em, pt, rem, etc.)*
+              </small>
+            </p>
           </div>
-          <aside class="notes">
-            <p>This includes operations on <span class="green">numbers with units</span> (px, em, pt, rem, etc.)*</p>
-            <p>We have a gotchya when it comes to division...</p>
-          </aside>
         </section>
 
         <!-- Sass Basics : Math & Color : Math Division -->
         <section>
           <h3><span class="white">Math</span> Division</h3>
-          <p class="copy--small box">CSS allows <code>/</code> to be used for separating values.</p>
-          <p class="copy--small"><code>font: normal 1.5em/1.25 Tahoma, Arial, sans-serif;</code></p>
-          <p class="copy--small box">SassScript maintains this support.<br />
-            <strong>There are three ways to <span class="green">trigger division:</span></strong></p>
-          <ul class="copy--small">
-            <li>If any part of the equation is a <span class="green">variable</span>: <code>$padding / 2</code></li>
-            <li>If the equation is surrounded by <span class="green">parentheses</span>: <code>(350 / .25)</code></li>
-            <li>If the equation involves <span class="green">another expression</span>: <code>2 + 3 / 10</code></li>
-          </ul>
+          <small>
+            <p>CSS allows <code>/</code> to be used for separating values.</p>
+            <p><code class="command">font: normal 1.5em/1.25 Tahoma, Arial, sans-serif;</code></p>
+            <p>SassScript maintains this support.<br/>
+              <strong>There are three ways to <span class="yellow">trigger division:</span></strong>
+            </p>
+            <ul>
+              <li>If any part of the equation is a <span class="orange">variable</span>: <code>$padding / 2</code></li>
+              <li>If the equation is surrounded by <span class="orange">parentheses</span>: <code>(350 / .25)</code></li>
+              <li>If the equation involves <span class="orange">another expression</span>: <code>2 + 3 / 10</code></li>
+            </ul>
+          </small>
         </section>
 
         <!-- Sass Basics : Math & Color : Math Utilities -->
         <section>
           <h3><span class="white">Math</span> Utilities</h3>
-          <p class="box copy--small">Sass also comes with a set of <span class="green">math functions</span>:</p>
-          <ul class="list--tall copy--small">
-            <li><code>abs($num)</code> - absolute value</li>
-            <li><code>ceil($num)</code> - round up to closest whole number</li>
-            <li><code>floor($num)</code> - round down to closest whole number</li>
-            <li><code>percentage($num)</code> - convert to percentage</li>
-            <li><code>round($num)</code> - round to closest whole number </li>
-            <li><code>max($list)</code> - maximum list value </li>
-            <li><code>min($list)</code> - minimum list value</li>
+          <p>Sass also comes with a set of <span class="orange">math functions</span>:</p>
+          <small>
+          <ul>
+            <li><code class="command yellow">abs($num)</code> - absolute value</li>
+            <li><code class="command yellow">ceil($num)</code> - round up to closest whole number</li>
+            <li><code class="command yellow">floor($num)</code> - round down to closest whole number</li>
+            <li><code class="command yellow">percentage($num)</code> - convert to percentage</li>
+            <li><code class="command yellow">round($num)</code> - round to closest whole number </li>
+            <li><code class="command yellow">max($list)</code> - maximum list value </li>
+            <li><code class="command yellow">min($list)</code> - minimum list value</li>
           </ul>
+          </small>
         </section>
 
         <!-- Sass Basics : Math & Color : Math Color -->
         <section>
           <h3><span class="white">Math</span> Color</h3>
-          <p class="copy--small box">We can also use <span class="green">math to manipulate colors</span>.</p>
-          <p class="copy--small">Math operations on colors <span class="green">work on pieces</span> (r, g, b).</p>
-          <div class="box">
-            <pre><code contenteditable class="scss">
-              .addition {
-                color: #555555 + #112233; // => #667788
-              }
-              .subtraction {
-                color: #555555 - #112233; // => #443322
-              }
-              .multiplication {
-                color: #555555 * 2;       // => #aaaaaa
-              }
-              .division {
-                color: (#555555 / 2);     // => #2a2a2a
-              }
-            </code></pre>
+          <p>
+            <small>We can also use <span class="yellow">math to manipulate colors</span>.</small>
+            <small>Math operations on colors <span class="yellow">work on pieces</span> (r, g, b).</small>
+          </p>
+          <div>
+            <pre><code contenteditable class="scss">.addition {
+  color: #555555 + #112233; // => #667788
+}
+.subtraction {
+  color: #555555 - #112233; // => #443322
+}
+.multiplication {
+  color: #555555 * 2;       // => #aaaaaa
+}
+.division {
+  color: (#555555 / 2);     // => #2a2a2a
+}</code></pre>
           </div>
-          <aside class="notes">
-            <p>However, there's an easier way.</p>
-          </aside>
         </section>
 
         <!-- Sass Basics : Math & Color : Color Utilities -->
         <section>
           <h3><span class="white">Sass Basics</span> Color Utilities</h3>
-          <p class="box copy--small">Sass comes with a set of <span class="green">color functions</span>.</p>
-          <div class="left copy--small" style="width: 52%">
-            <ul>
-              <li><code>rgba($hex, $alpha)</code><br /><small>Converts HEX to RGBA and sets alpha (opacity)</small></li>
-              <li><code>lighten($color, $percent)</code><br /><small>Makes a color lighter</small></li>
-              <li><code>darken($color, $percent)</code><br /><small>Makes a color darker</small></li>
-              <li><code>saturate($color, $percent)</code><br /><small>Makes a color more saturated</small></li>
-              <li><code>desaturate($color, $percent)</code><br /><small>Makes a color less saturated</small></li>
-            </ul>
+          <p><small>Sass comes with a set of <span class="yellow">color functions</span>.</small></p>
+          <div class="pull-left" style="width: 52%">
+            <small>
+              <ul>
+                <li><code class="command">rgba($hex, $alpha)</code><br /><small>Converts HEX to RGBA and sets alpha (opacity)</small></li>
+                <li><code class="command">lighten($color, $percent)</code><br /><small>Makes a color lighter</small></li>
+                <li><code class="command">darken($color, $percent)</code><br /><small>Makes a color darker</small></li>
+                <li><code class="command">saturate($color, $percent)</code><br /><small>Makes a color more saturated</small></li>
+                <li><code class="command">desaturate($color, $percent)</code><br /><small>Makes a color less saturated</small></li>
+              </ul>
+            </small>
           </div>
-          <div class="right copy--small" style="width: 46%">
-            <ul>
-              <li><code>mix($color1, $color2)</code><br /><small>Mixes two colors together</small></li>
-              <li><code>grayscale($color)</code><br /><small>Converts a color to grayscale</small></li>
-              <li><code>invert($color)</code><br /><small>Inverts a color</small></li>
-              <li><code>complement($color)</code><br /><small>Returns the complement of a color</small></li>
-              <li>AND SO MUCH MORE!</li>
-            </ul>
+          <div class="pull-right" style="width: 46%">
+            <small>
+              <ul>
+                <li><code class="command">mix($color1, $color2)</code><br /><small>Mixes two colors together</small></li>
+                <li><code class="command">grayscale($color)</code><br /><small>Converts a color to grayscale</small></li>
+                <li><code class="command">invert($color)</code><br /><small>Inverts a color</small></li>
+                <li><code class="command">complement($color)</code><br /><small>Returns the complement of a color</small></li>
+                <li>AND SO MUCH MORE!</li>
+              </ul>
+            </small>
           </div>
-          <p><small>Here's are two awesome tools to help <a href="http://sassme.arc90.com/" target="_blank">visualize</a> <a href="http://jackiebalzer.com/color" target="_blank">color</a> output.</small></p>
+          <p class="clear-both"><small>Here's a tool to help <a href="http://jackiebalzer.com/color" target="_blank">color</a> output.</small></p>
           <aside class="notes">
             <p>These are awesome and invaluable</p>
             <p>These tools for math and color really help with maintainability and managing color palettes.</p>
             <p>Let's give some of this a try...</p>
           </aside>
-        </section>
-
-        <!-- Sass Basics : Math & Color : Develop It! -->
-        <section>
-          <h3>Math &amp; Color <span class="yellow">Exercise</span></h3>
-
-          <div class="pull-left" style="width: 48%">
-            <ul class="list--tall">
-              <li><span class="green">Use a color function</span> to darken the background color of header nav links on hover.<br />
-                <small>Be sure to set the new color to a variable, too!</small></li>
-              <li><span class="green">Use math operations</span> to calculate any widths being set:
-                <ul class="copy--small">
-                  <li>See <code>.wrapper</code> and <code>.kitten</code></li>
-                  <li>See <code>.news</code>, <code>.events</code>, and <code>.location</code></li>
-                </ul>
-                <small class="box--small"><strong>Hint:</strong> use variables for "base" widths.</small></li>
-            </ul>
-          </div>
-          <div class="box--small right" style="width: 48%">
-            <img src="images/math.jpg" style="width: 75%;" />
-          </div>
-
-          <p><small><code>sass --watch sass/application.scss:css/application.css</code></small></p>
         </section>
       </section>
 
@@ -3052,66 +3007,66 @@ body {
         <!-- Advanced Sass : Directives : For Loops -->
         <section>
           <h3><span class="white">Directives</span> For Loops</h3>
-          <div class="left" style="width: 43%">
-            <p class="box--small">Sass lets us <span class="yellow">loop<br /> through # ranges</span>.</p>
-            <pre><code contenteditable class="scss">
-            @for $i from 1 through 12 {
-              .grid-col-#{$i} {
-                width: $grid-col-width * $i;
-              }
-            }
+          <div class="pull-left" style="width: 43%">
+            <p><small>Sass lets us <br/><span class="yellow">loop through # ranges</span>.</small></p>
+            <pre><code contenteditable class="scss">@for $i from 1 through 12 {
+  .grid-col-#{$i} {
+    width: $grid-col-width * $i;
+  }
+}
 
-            // .grid-col-1 {
-            //   width: 60px;
-            // }
-            // .grid-col-2 {
-            //   width: 120px;
-            // }
-            </code></pre>
+// .grid-col-1 {
+//   width: 60px;
+// }
+// .grid-col-2 {
+//   width: 120px;
+// }</code></pre>
           </div>
-          <div class="pull-right copy--small" style="width: 54%">
-            <ul class="list--tall">
-              <li><span class="green">Two forms</span> of <code>@for</code> loops;</code>
-                <ul class="copy--small" style="margin-left: 1em;">
-                  <li><code>@for $var from &lt;start&gt; <strong>through</strong> &lt;end&gt;</code><br />
-                    <span class="copy--small">Loop range <em>includes</em> start and end</span></li>
-                  <li><code>@for $var from &lt;start&gt; <strong>to</strong> &lt;end&gt;</code><br />
-                    <span class="copy--small">Loop range <em>excludes</em> end</span></li>
-                </ul><br />
-              </li>
-              <li><code>$var</code> can be any variable name</li>
-              <li><code>&lt;start&gt;</code> and <code>&lt;end&gt;</code> can be an integer, or a variable storing one</li>
-            </ul>
+          <div class="pull-right" style="width: 54%">
+            <small>
+              <ul>
+                <li><span class="yellow">Two forms</span> of <code class="command">@for</code> loops;</code>
+                  <ul>
+                    <li><code class="command">@for $var from &lt;start&gt; <strong>through</strong> &lt;end&gt;</code><br />
+                      <span>Loop range <em>includes</em> start and end</span></li>
+                    <li><code class="command">@for $var from &lt;start&gt; <strong>to</strong> &lt;end&gt;</code><br />
+                      <span>Loop range <em>excludes</em> end</span></li>
+                  </ul><br />
+                </li>
+                <li><code class="command">$var</code> can be any variable name</li>
+                <li><code class="command">&lt;start&gt;</code> and <code class="command">&lt;end&gt;</code> can be an integer, or a variable storing one</li>
+              </ul>
+            </small>
           </div>
         </section>
 
         <!-- Advanced Sass : Directives : While Loops -->
         <section>
           <h3><span class="white">Directives</span> While Loops</h3>
-          <div class="left" style="width: 43%">
-            <p class="box--small">Sass lets us <br /><span class="yellow">loop conditionally</span>.</p>
-            <pre><code contenteditable class="scss">
-            $i: 1;
+          <div class="pull-left" style="width: 43%">
+            <p>
+              <small>Sass lets us <br /><span class="yellow">loop conditionally</span>.</small>
+            </p>
+            <pre><code contenteditable class="scss">$i: 1;
 
-            @while $i &lt;= 12 {
-              .grid-col-#{$i} {
-                width: $grid-col-width * $i;
-              }
+@while $i &lt;= 12 {
+  .grid-col-#{$i} {
+    width: $grid-col-width * $i;
+  }
 
-              $i: $i + 1;
-            }
+  $i: $i + 1;
+}
 
-            // .grid-col-1 {
-            //   width: 60px;
-            // }
-            // .grid-col-2 {
-            //   width: 120px;
-            // }
-            // ...
-            </code></pre>
+// .grid-col-1 {
+//   width: 60px;
+// }
+// .grid-col-2 {
+//   width: 120px;
+// }
+// ...</code></pre>
           </div>
-          <div class="pull-right left-align copy--small" style="width: 52%">
-            <ul class="list--tall">
+          <div class="pull-right" style="width: 52%">
+            <ul>
               <li>The <code>@while</code> <span class="green">directives</span> take the form of:
                 <ul class="copy--small"><li><code class="copy--small">@while &lt;comparison&gt;</code></li></ul><br />
                 </li>
@@ -3120,11 +3075,7 @@ body {
               <li class="copy--small">The <code>&lt;comparison&gt;</code> variable will often be an integer that you increment, but it could be any data type that you modify as you go</li>
             </ul>
           </div>
-          <aside class="notes">
-            <p>@while loops can acheive more complex looping than @for, it's rarely necessary though</p>
-          </aside>
         </section>
-
 
         <!-- Advanced Sass : Maps -->
         <section>
