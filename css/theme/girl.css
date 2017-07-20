@@ -406,3 +406,9 @@
 ul.ul-space li {
   padding: 10px!important;
 }
+.reveal .box {
+    margin: 2em 0;
+}
+.reveal .box--small {
+    margin: 1em 0;
+}

@@ -76,7 +76,6 @@
             <li>Sass Basics</li>
             <li>Sass Advanced</li>
             <li>Media Queries</li>
-            <li>Modular Architecture</li>
             <li>A Short &amp; Lovely Demo</li>
             <li>Wrap Up</li>
           </ol>
@@ -496,7 +495,7 @@ $teal:         #095169;
           <ul>
             <li>Variables ($)</li>
             <li>Partials using @import</li>
-            <li>Nesting (but be careful)</li>
+            <li>Nesting</li>
             <li>Mixins</li>
             <li>Inheritance using @extend</li>
             <li>Pre-processing</li>
@@ -640,12 +639,6 @@ $white: #fff;
           </p>
           <p class="padding-20">
             <small>
-              <code class="command">$ sass --update source.scss:output.css</code><br/>
-              <span class="white">Compile source.scss to output.css. Will create directory if it doesn't exist.</span>
-            </small>
-          </p>
-          <p class="padding-20">
-            <small>
               <code class="command">$ sass --watch source.scss output.css</code><br/>
               <span class="white">Watch source.scss for changes. Will create directory if it doesn't exist.</span>
             </small>
@@ -654,6 +647,7 @@ $white: #fff;
             <small>
               <code class="command">$ sass --style expanded source.scss:output.css</code><br/>
               <span class="white">Adjusts output format. Options: <strong>nested</strong>, expanded, compact, compressed.</span>
+              <a href="https://web-design-weekly.com/2014/06/15/different-sass-output-styles/" target="_blank">See Example</a>
             </small>
           </p>
         </section>
@@ -961,44 +955,6 @@ a .btn {
           </div>
         </section>
 
-        <!-- Sass Basics : Nesting : Develop It! -->
-        <section>
-          <h3>Nesting <span class="white">Exercise</span></h3>
-
-          <div class="pull-left" style="width: 55%;">
-            <p><small class="yellow">NEST ALL THE THINGS!!</small></p>
-            <p><small><strong>BUT</strong> Don't nest too deeply!</small></p>
-            <p><small class="white"><strong>And just kidding...</strong><br/>You don't <em>need</em> to nest <em>everything</em></small></p>
-            <p><small><strong>P.S. Don't Forget</strong><br/>The parent <code>&amp;</code> selector.</small></p>
-          </div>
-
-          <div class="pull-right" style="width: 45%">
-            <pre><code contenteditable class="scss">// good
-.navigation {
-  li {//...}
-  a  {
-    //...
-    &amp;:hover { //... }
-  }
-}
-
-// bad
-body {
-  .header {
-    .navigation {
-      ul {
-        li {
-          a {
-            // ...
-          }
-        }
-      }
-    }
-  }
-}</code></pre>
-          </div>
-        </section>
-
         <!-- Sass Basics : Imports & Organization -->
         <section>
           <h3>Sass Basics</h3>
@@ -1016,7 +972,6 @@ body {
               <span class="yellow">Sass</span> modifies <code class="command">@import</code> to instead include the resource <span class="yellow">during compilation</span>, rather than on the client side.
             </small>
           </p>
-          <p class="orange">Organization OMGZZ!</p>
           <pre><code contenteditable class="scss">@import "vars";
 
 @import "compass";
@@ -1042,7 +997,7 @@ body {
             </p>
             <p>
               <small>
-                These <code>@import</code>s look for resources within the <span class="yellow">main Sass file's</span> parent directory.
+                These <code class="command">@import</code>s look for resources within the <span class="yellow">main Sass file's</span> parent directory.
               </small>
             </p>
           </div>
@@ -1270,49 +1225,6 @@ body {
           </div>
         </section>
 
-        <!-- Sass Basics : Imports exercise! -->
-        <section>
-          <h3>Imports <span class="yellow">Exercise</span></h3>
-          <div class="pull-left" style="width: 48%">
-            <small>
-              <ul>
-                <li><span class="yellow">Update your Sass structure</span> to look something like the one on the right.</li>
-                <li><span class="yellow">Move ALL styles</span> from <code>application.scss</code> to more modular / organized locations.</li>
-                <li><span class="yellow">Update</span> <code>application.scss</code> to <code>@import</code> your new partials.</li>
-              </ul>
-            </small>
-          </div>
-          <div class="pull-right" style="width: 48%">
-            <small>
-              <ul>
-                <li>kittens
-                  <ul>
-                    <li>sass
-                      <ul>
-                        <li>base
-                          <ul>
-                            <li>_base.scss</li>
-                          </ul>
-                        </li>
-                        <li>modules
-                          <ul>
-                            <li>_all.scss</li>
-                            <li>_header.scss</li>
-                            <li>_footer.scss</li>
-                            <li>_kittens.scss</li>
-                            <li>_info.scss</li>
-                          </ul>
-                        </li>
-                        <li>application.scss</li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </small>
-          </div>
-          <p class="pull-left padding-top-30"><small><code class="command">sass --watch sass/application.scss:css/application.css</code></small></p>
-        </section>
         <!-- Sass Basics : Variables -->
         <section>
           <h3>Sass Basics</h3>
@@ -1364,7 +1276,7 @@ body {
 
           <p>
             <small>
-              Variables are defined à la CSS prop/val pairs: <code class="command">$property: value;</code>
+              Variables are defined as CSS prop/val pairs: <code class="command">$property: value;</code>
             </small>
             <small>
               Variables are then referenced by their <code class="command">$</code>-prefixed names.
@@ -1635,25 +1547,6 @@ $feature__link--color--hover: $eggplant;
 }</code></pre>
           </div>
         </section>
-
-        <!-- Sass Basics : Variables : Develop It! -->
-        <section>
-          <h3>Variables <span class="yellow">Exercise</span></h3>
-          <div class="pull-left" style="width: 100%">
-            <p><span class="green">Create a <code class="command">vars</code> partial</span> in your base directory and <code class="command">@import</code> it in your main <code class="command">.scss</code> file.</p>
-            <p><strong class="orange">DRY Up Your Styles</strong></p>
-            <p class="yellow">Add variables for things like:</p>
-            <small>
-              <ul>
-                <li>colors values</li>
-                <li>font family</li>
-                <li>border width</li>
-                <li>border radius</li>
-              </ul>
-            </small>
-          </div>
-        </section>
-
 
         <!-- Sass Basics : Math & Color -->
         <section>
@@ -2288,23 +2181,6 @@ $icon-minus: "\e601";
           </div>
         </section>
 
-        <!-- Advanced Sass : Mixins : Develop It! -->
-        <section>
-          <h3>Mixins <span class="yellow">Exercise</span></h3>
-          <div class="pull-left" style="width: 64%">
-            <small>
-              <ul class="ul-space">
-                <li><span class="yellow">Create a <code class="command">mixins</code> partial</span> in your base directory and <code class="command">@import</code> it in your main <code class="command">.scss</code> file.</li>
-                <li><span class="yellow">Create a <code class="command">@mixin</code></span> for scaled transformations with a required scale amount argument. Include common vendor prefixes.<br />
-                  <small>ie. <code class="command">transform: scale(1.1);</code></small></li>
-                <li>Look for other combinations of <span class="yellow">repeated styles or complexities</span> that could be abstracted.</li>
-              </ul>
-            </small>
-          </div>
-          <p><small><code class="command">sass --watch sass/application.scss:css/application.css</code></small></p>
-        </section>
-
-
         <!-- Advanced Sass : Inheritance -->
         <section>
           <h3>Advanced Sass</h3>
@@ -2835,39 +2711,6 @@ article header, .article .header, [class*='rabbit'], .party .at .codemash,
           </div>
         </section>
 
-        <!-- Advanced Sass : Inheritance : Develop It! -->
-        <section>
-          <h3>@extend <span class="yellow">Exercise</span></h3>
-          <div class="pull-left" style="width: 50%;">
-            <small>
-              <ul>
-                <li><span class="yellow">Create a <code>placeholders</code> partial</span> in your base directory and <code>@import</code> it in your main <code>.scss</code> file.</li>
-                <li><span class="yellow">Create a placeholder for <code>%clearfix</code></span> and <code>@extend</code> it on the appropriate selectors.<br/>
-                  <small>Also remove the <code>.clearfix</code> class from the markup.</small></li>
-                <li><span class="yellow">Create a <code>.navlist--inline</code> class</span> like the one on the right.</li>
-                <li><span class="yellow"><code>@extend</code> that class on elements that match the pattern.</span><br />
-                  <small><strong>Hint:</strong> checkout the header and footer styles.</small></li>
-              </ul>
-            </small>
-          </div>
-          <div class="pull-right" style="width: 46%;">
-            <span class="white">Let's get modular!</span>
-            <pre><code contenteditable class="scss">.navlist--inline {
-  list-style-type: none;
-
-  li {
-    display: inline-block;
-  }
-
-  a {
-    display: block;
-  }
-}</code></pre>
-          </div>
-          <p><small><code class="command">sass --watch sass/application.scss:css/application.css</code></small></p>
-        </section>
-
-
         <!-- Advanced Sass : Directives -->
         <section>
           <h3>Advanced Sass</h3>
@@ -3066,14 +2909,16 @@ body {
 // ...</code></pre>
           </div>
           <div class="pull-right" style="width: 52%">
-            <ul>
-              <li>The <code>@while</code> <span class="green">directives</span> take the form of:
-                <ul class="copy--small"><li><code class="copy--small">@while &lt;comparison&gt;</code></li></ul><br />
+            <small>
+              <ul>
+                <li>The <code>@while</code> <span class="green">directives</span> take the form of:
+                  <small><ul><li><code class="command">@while &lt;comparison&gt;</code></li></ul></small>
                 </li>
-              <li>It will output styles until the comparison statement returns <code>false</code></li>
-              <li><em>You must manually update the variable you're comparing against</em></li>
-              <li class="copy--small">The <code>&lt;comparison&gt;</code> variable will often be an integer that you increment, but it could be any data type that you modify as you go</li>
-            </ul>
+                <li>It will output styles until the comparison statement returns <code>false</code></li>
+                <li><em>You must manually update the variable you're comparing against</em></li>
+                <li>The <code class="command">&lt;comparison&gt;</code> variable will often be an integer that you increment, but it could be any data type that you modify as you go</li>
+              </ul>
+            </small>
           </div>
         </section>
 
@@ -3081,80 +2926,70 @@ body {
         <section>
           <h3>Advanced Sass</h3>
           <p>Maps</p>
-          <aside class="notes">
-            <p></p>
-          </aside>
         </section>
 
         <!-- Advanced Sass : Maps : Setup -->
         <section>
           <h3><span class="white">Advanced Sass</span> Maps</h3>
           <p class="box">Maps give us <span class="yellow">key-value</span> pairings.</p>
-          <div class="left" style="width: 43%">
-            <pre><code contenteditable class="scss">
-            $mymap: (
-              key1: value1,
-              key2: value2,
-              key3: value3
-            );
-            </code></pre>
+          <div class="pull-left" style="width: 43%">
+            <pre><code contenteditable class="scss">$mymap: (
+  key1: value1,
+  key2: value2,
+  key3: value3
+);</code></pre>
           </div>
-          <div class="pull-right copy--small" style="width: 52%">
-            <ul class="list--tall">
-              <li>Maps must always be <span class="green">surrounded by parentheses.</span></li>
-              <li>Key-value pairs must always be <span class="green">comma separated</span>.</li>
-              <li>Maps can be <span class="green">looped through or accessed</span> via built-in <code>map</code> functions.</li>
-            </ul>
+          <div class="pull-right" style="width: 52%">
+            <small>
+              <ul>
+                <li>Maps must always be <span class="yellow">surrounded by parentheses.</span></li>
+                <li>Key-value pairs must always be <span class="yellow">comma separated</span>.</li>
+                <li>Maps can be <span class="yellow">looped through or accessed</span> via built-in <code>map</code> functions.</li>
+              </ul>
+            </small>
           </div>
-          <aside class="notes">
-            <p>So let's look at a semi-realistic example of this...</p>
-          </aside>
         </section>
 
         <!-- Advanced Sass : Maps : Output -->
         <section>
           <h3><span class="white">Advanced Sass</span> Maps</h3>
           <div class="pull-left" style="width: 48%">
-            <h4 class="yellow">Sass</h4>
-            <pre><code contenteditable class="scss">
-              $eye_color: (
-                jeremy: #0989cb,
-                beth: #8666ae,
-                sarah: #02bba7
-              );
+            <strong class="red-white-bg">Sass</strong>
+            <pre><code contenteditable class="scss">$eye_color: (
+  jeremy: #0989cb,
+  beth: #8666ae,
+  sarah: #02bba7
+);
 
-              $font: (
-                jeremy: Helvetica,
-                beth: Verdana,
-                sarah: Times
-              );
+$font: (
+  jeremy: Helvetica,
+  beth: Verdana,
+  sarah: Times
+);
 
-              @each $key, $value in $eye_color {
-                .#{$key} {
-                  background: $value;
-                  font-family: map-get($font, $key);
-                }
-              }
-            </code></pre>
+@each $key, $value in $eye_color {
+  .#{$key} {
+    background: $value;
+    font-family: map-get($font, $key);
+  }
+}</code></pre>
           </div>
           <div class="pull-right" style="width: 48%">
-            <h4 class="pink">CSS Output</h4>
-            <pre><code contenteditable class="css">
-              .jeremy {
-                background: #0989cb;
-                font-family: Helvetica;
-              }
+            <strong class="white-red-bg">CSS Output</strong>
+            <pre><code contenteditable class="css">.jeremy {
+  background: #0989cb;
+  font-family: Helvetica;
+}
 
-              .beth {
-                background: #8666ae;
-                font-family: Verdana;
-              }
+.beth {
+  background: #8666ae;
+  font-family: Verdana;
+}
 
-              .sarah {
-                background: #02bba7;
-                font-family: Times;
-              }
-            </code></pre>
+.sarah {
+  background: #02bba7;
+  font-family: Times;
+}</code></pre>
           </div>
           <aside class="notes">
             <p>Here, we're looping AND using the map-get function</p>
@@ -3164,13 +2999,13 @@ body {
         <!-- Advanced Sass : Maps : Functions -->
         <section>
           <h3><span class="white">Advanced Sass</span> Map Functions</h3>
-          <ul class="box--small list--xtall copy--small">
-            <li><code>map-get($map, $key)</code></li>
-            <li><code>map-merge($map1, $map2)</code></li>
-            <li><code>map-remove($map, $keys...)</code></li>
-            <li><code>map-keys($map)</code></li>
-            <li><code>map-values($map)</code></li>
-            <li><code>map-has-key($map, $key)</code></li>
+          <ul>
+            <li><code class="command">map-get($map, $key)</code></li>
+            <li><code class="command">map-merge($map1, $map2)</code></li>
+            <li><code class="command">map-remove($map, $keys...)</code></li>
+            <li><code class="command">map-keys($map)</code></li>
+            <li><code class="command">map-values($map)</code></li>
+            <li><code class="command">map-has-key($map, $key)</code></li>
           </ul>
         </section>
 
@@ -3179,200 +3014,128 @@ body {
         <section>
           <h3>Advanced Sass</h3>
           <p class="box">Putting it all together.</p>
-          <aside class="notes">
-            <p>it can be hard to know when to use something like functions or loops or maps.</p>
-            <p>so i've got a couple different real-world examples here for us to look at...</p>
-          </aside>
         </section>
 
         <!-- Advanced Sass : Putting it all together : Icons -->
         <section>
           <h3><span class="white">Advanced Sass</span> Icons</h3>
           <div class="box--small">
-            <pre><code contenteditable class="scss">
-              $icons: (
-                checkmark: "\e600",
-                plus:      "\e601",
-                minus:     "\e602"
-              );
+            <pre><code contenteditable class="scss">$icons: (
+  checkmark: "\e600",
+  plus:      "\e601",
+  minus:     "\e602"
+);
 
-              @each $name, $value in $icons {
-                .icon--#{$name} {
-                  &:before { content: $value; }
-                }
-              }
-            </code></pre>
+@each $name, $value in $icons {
+  .icon--#{$name} {
+    &:before { content: $value; }
+  }
+}</code></pre>
           </div>
-          <aside class="notes">
-            <p>So this is very similar to the icon example that we talked aobut for mixins... except that we're using a map to store the variables and a loop to set up the classes</p>
-          </aside>
         </section>
 
         <!-- Advanced Sass : Putting it all together : Modules -->
         <section>
           <h3><span class="white">Advanced Sass</span> Module Skins</h3>
           <div class="box--small">
-            <pre><code contenteditable class="scss">
-              $messages: (
-                error:   (#d82d2d, #666),
-                success: (#52bf4a, #fff),
-                warning: (#c23435, #fff)
-              );
+            <pre><code contenteditable class="scss">$messages: (
+  error:   (#d82d2d, #666),
+  success: (#52bf4a, #fff),
+  warning: (#c23435, #fff)
+);
 
-              @each $name, $colors in $messages {
-                $bg: nth($colors, 1);
-                $color: nth($colors, 2);
+@each $name, $colors in $messages {
+  $bg: nth($colors, 1);
+  $color: nth($colors, 2);
 
-                .message--#{$name} {
-                  background-color: $bg;
-                  color: $color;
-                }
-              }
-
-            </code></pre>
+  .message--#{$name} {
+    background-color: $bg;
+    color: $color;
+  }
+}</code></pre>
           </div>
-          <aside class="notes">
-            <p>In this case our key values are lists - so we use the built-in <code>nth</code> list method to grab the proper list value.</p>
-            <p>In Sass, lists are 1-based</p>
-          </aside>
         </section>
 
         <!-- Advanced Sass : Putting it all together : Z-Index -->
         <section>
           <h3><span class="white">Advanced Sass</span> Z-Indexes</h3>
           <div class="box--small">
-            <pre><code contenteditable class="scss">
-              $layers: (
-                bottom: 1,
-                middle: 5,
-                top:    10
-              );
+            <pre><code contenteditable class="scss">$layers: (
+  bottom: 1,
+  middle: 5,
+  top:    10
+);
 
-              @mixin layer($name) {
-                z-index: map-get($layers, $name);
-              };
+@mixin layer($name) {
+  z-index: map-get($layers, $name);
+};
 
-              .overlay {
-                @include layer(middle);
-              }
+.overlay {
+  @include layer(middle);
+}
 
-              .lightbox {
-                @include layer(top);
-              }
-            </code></pre>
+.lightbox {
+  @include layer(top);
+}</code></pre>
           </div>
-          <aside class="notes">
-            <p>z-indexes are always an area we struggle with in CSS.</p>
-            <p>we tend to create entirely arbitary numbers just to try and ensure that we get the layering right</p>
-            <p>why not create a layering system from the start, that we work with throughout?</p>
-          </aside>
         </section>
 
         <!-- Advanced Sass : Putting it all together : Font Sizes -->
         <section>
           <h3><span class="white">Advanced Sass</span> Font Sizes</h3>
           <div class="box--small">
-            <pre><code contenteditable class="scss">
-              $font--sizes: (
-                ( base,  $base-font-size,     $base-line-height ),
-                ( small, $base-font-size*.75, $base-line-height*.75 ),
-                ( large, $base-font-size*1.5, $base-line-height*1.5 )
-              );
+            <pre><code contenteditable class="scss">$font--sizes: (
+  ( base,  $base-font-size,     $base-line-height ),
+  ( small, $base-font-size*.75, $base-line-height*.75 ),
+  ( large, $base-font-size*1.5, $base-line-height*1.5 )
+);
 
-              @mixin typeset($level) {
-                @each $item in $font--sizes {
-                  @if $level == nth($item, 1) {
-                    font-size: nth($item, 2);
-                    line-height: nth($item, 3);
-                  }
-                }
-              }
+@mixin typeset($level) {
+  @each $item in $font--sizes {
+    @if $level == nth($item, 1) {
+      font-size: nth($item, 2);
+      line-height: nth($item, 3);
+    }
+  }
+}
 
-              @each $set in $font--sizes {
-                $size: nth($set, 1);
-                #{"%size--" + $size} {
-                  @include typeset($size);
-                }
-              }
-
-            </code></pre>
+@each $set in $font--sizes {
+  $size: nth($set, 1);
+  #{"%size--" + $size} {
+    @include typeset($size);
+  }
+}</code></pre>
           </div>
-          <aside class="notes">
-            <p>here we have a set of font-size &amp; line-height combinations</p>
-            <p>we've got a mixin to output font-size &amp; line-height for a requested size</p>
-            <p>and then we've got a loop creating placeholders that include the mixin</p>
-          </aside>
         </section>
 
         <!-- Advanced Sass : Putting it all together : Theming -->
         <section>
           <h3><span class="white">Advanced Sass</span> Theming</h3>
           <div class="box--small">
-            <pre><code contenteditable class="scss">
-              $themes: (
-                gray: (
-                  button-bg: #ccc,
-                  button-color: #f2f2f2
-                ),
-                brown: (
-                  button-bg: #ab906b,
-                  button-color: #ecdac3
-                )
-              );
+            <pre><code contenteditable class="scss">$themes: (
+  gray: (
+    button-bg: #ccc,
+    button-color: #f2f2f2
+  ),
+  brown: (
+    button-bg: #ab906b,
+    button-color: #ecdac3
+  )
+);
 
-              @function setStyle($theme, $property) {
-                @return map-get(map-get($themes, $theme), $property);
-              }
+@function setStyle($theme, $property) {
+  @return map-get(map-get($themes, $theme), $property);
+}
 
-              .btn {
-                @each $key, $value in $themes {
-                  .theme--#{$key} & {
-                    background: setStyle($key, button-bg);
-                    color: setStyle($key, button-color);
-                  }
-                }
-              }
-            </code></pre>
+.btn {
+  @each $key, $value in $themes {
+    .theme--#{$key} & {
+      background: setStyle($key, button-bg);
+      color: setStyle($key, button-color);
+    }
+  }
+}</code></pre>
           </div>
-          <aside class="notes">
-            <p>We've got a map of themes and their related styles</p>
-            <p>We use the name of the theme followed by the parent selector to modify the parent elements styles based on the theme.</p>
-          </aside>
-        </section>
-
-        <!-- Advanced Sass : Demo -->
-        <section>
-          <h3>Advanced Sass</h3>
-          <p class="box--top copy--small">A little bit of <a href="work/examples/views/animation-grid-rotation.html" target="_blank">list amazesauce</a> for you.<br/><small>via <a href="https://github.com/roytomeij/sassconf" target="_blank">Roy Tomeij</a> &amp; Sass Conf 2013</small></p>
-          <aside class="notes">
-          </aside>
-        </section>
-
-        <!-- Advanced Sass : Advanced : Develop It! -->
-        <section>
-          <h3>Advanced <span class="yellow">Exercise</span></h3>
-          <p class="box">I failed to come up with an exercise for the kittens site.</p>
-          <div class="left-align left" style="width: 48%">
-            <p class="copy--small">Look for things like this in your code:</p>
-            <ul class="list--tall copy--xsmall">
-              <li>Complex Math => try Functions</li>
-              <li>Associated Data => try Maps</li>
-              <li>Repetetive Module Styles => try Loops, Mixins, Extends</li>
-            </ul>
-          </div>
-          <div class="left-align right" style="width: 48%">
-            <p class="copy--small">Play around with this cool stuff:</p>
-            <ul class="copy--xsmall">
-              <li><a target="_blank" href="https://github.com/roytomeij/sassconf">https://github.com/roytomeij/sassconf</a></li>
-              <li><a target="_blank" href="http://codepen.io/bpainter/pen/nJuHk">http://codepen.io/bpainter/pen/nJuHk</a></li>
-              <li><a target="_blank" href="http://codepen.io/bpainter/pen/LaquJ">http://codepen.io/bpainter/pen/LaquJ</a></li>
-              <li><a target="_blank" href="http://codepen.io/bpainter/pen/mIvjx">http://codepen.io/bpainter/pen/mIvjx</a></li>
-              <li><a target="_blank" href="http://codepen.io/bpainter/pen/Fdpxs">http://codepen.io/bpainter/pen/Fdpxs</a></li>
-            </ul>
-          </div>
-          <p class="clear" style="padding-top: 1em;"><small><code>sass --watch sass/application.scss:css/application.css</code></small></p>
-          <aside class="notes">
-          </aside>
         </section>
       </section>
 
@@ -3637,135 +3400,13 @@ $tablet-port: "screen and (min-width: 768px)";
             </small>
           </div>
         </section>
-
-        <!-- Media Queries : Develop It! -->
-        <section>
-          <h3>Media Queries <span class="yellow">Exercise</span></h3>
-          <p>
-            <small>Turn this CSS <i class="fa fa-arrow-right yellow"></i> Sass via <i>one</i> of the example methods below.<br/>
-            You get to decide the best way to organize and nest things.</small></p>
-          <div class="pull-left" style="width: 49%;">
-            <strong class="red-white-bg">CSS</strong>
-            <pre><code contenteditable class="css">@media screen and (max-width: 480px) {
-  body     { text-align: center; }
-  .wrapper { width: 100%; }
-  .search  { margin-top: 1em; }
-
-  .header nav, .footer nav,
-  .footer .copy, .search {
-    float: none;
-  }
-
-  .kittens li,
-  .news, .events, .location {
-    float: none;
-    padding: 1em 0;
-    width: 100%;
-  }
-}</code></pre>
-          </div>
-          <div class="pull-right" style="width: 49%;">
-            <strong class="white-red-bg">Sass</strong>
-            <pre><code contenteditable class="scss">// Option 1 - dimension variable
-@media screen and (max-width: $mobile-large) {
-  // ...
-}
-
-// Option 2 - media query variable
-@media #{$tablet-small} {
-  // ...
-}
-
-// Option 3 - mixin with @content
-@mixin respond-to($breakpoint) {
-  @if $breakpoint == desktop-large {
-    @media only screen and (max-width: $width-large) {
-      @content;
-    }
-  } @else if $breakpoint == mobile-large {
-    // ...
-  }
-}</code></pre>
-          </div>
-        </section>
       </section>
 
       <!-- Section 6 -->
       <section>
         <section>
           <h2>Section - VI</h2>
-          <p>Modular Architecture</p>
-        </section>
-        <!-- Modular Architecture : Explained -->
-        <section>
-          <h3><span class="white">Modular Architecture</span> Explained</h3>
-          <p>
-            <small>
-              Modular architecture is the <em>abstraction of repetition</em> into "objects".
-            </small>
-          </p>
-          <ul>
-            <li>Objects / <span class="yellow">Modules</span> / Blocks<br />
-              <small><code>.header</code>, <code>.footer</code>, <code>.comment</code>, <code>.button</code>, etc.</small>
-            </li>
-            <li><span class="yellow">Parent - Child</span> Relationships<br />
-              <small><code>.media</code>, <code>.media__img</code>, <code>.media__body</code>, etc.</small>
-            </li>
-            <li><span class="yellow">Modifiers &amp; States</span><br />
-              <small><code>.btn--primary</code>, <code>.btn--small</code>, <code>.btn.is-selected</code>, etc.</small>
-            </li>
-          </ul>
-        </section>
-
-        <!-- Modular Architecture : Methodology -->
-        <section>
-          <h4><span class="white">Modular Architecture</span> Methodology</h4>
-          <div>
-            <ul class="box list--tall">
-              <li><span class="yellow">Thinking</span> in <span class="green">modules</span> with various <span class="green">states</span>.<br />
-                <small><code>.btn</code>, <code>.btn--primary</code>, <code>.btn--disabled</code></small>
-              </li>
-              <li><span class="yellow">Classes</span> VS. <span class="red">IDs</span> VS. <span class="red">Child Selectors</span><br />
-                <small>Take that, specificity!</small>
-              </li>
-              <li><span class="yellow">Naming</span> Conventions<br />
-                <small>Semantic <code>.content</code>, <code>.news__title</code>, <code>.callNow</code><br />
-                Presentational <code>.grid__col--9</code>, <code>.btn--small</code>, <code>.color--primary</code></small>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- Modular Architecture : Goals -->
-        <section>
-          <h3><span class="white">Modular Architecture</span> Goals</h3>
-          <ul class="box--small list--tall">
-            <li><span class="yellow">Modularity</span><br />
-              <small>Added new page. Wrote 0 lines of CSS. <i class="fa fa-thumbs-o-up"></i></small>
-            </li>
-            <li><span class="yellow">Scalability</span><br />
-              <small>I got 99 problems, but specificity ain't one.</small>
-            </li>
-            <li><span class="yellow">Maintainability</span><br />
-              <small>Oh, you wanted a <em>big</em> button? <code>.btn--large</code>. BOOM.</small>
-            </li>
-            <li><span class="yellow">DRY &amp; Organized</span><br />
-              <small>That's just plain smart.</small></li>
-          </ul>
-        </section>
-
-        <!-- Modular Architecture : Resources -->
-        <section>
-          <h3><span class="white">Modular Architecture</span> Resources</h3>
-          <small>
-            <ul>
-              <li><a href="http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/" target="_blank">An Introduction To Object Oriented CSS</a></li>
-              <li><a href="http://ianstormtaylor.com/oocss-plus-sass-is-the-best-way-to-css/" target="_blank">OOCSS + Sass = The best way to CSS</a></li>
-              <li><a href="http://www.sitepoint.com/css-architectures-scalable-and-modular-approaches/" target="_blank">CSS Architectures: Scalable and Modular Approaches</a></li>
-              <li><a href="http://www.creativebloq.com/css3/create-modular-and-scalable-css-9134351" target="_blank">4 ways to create CSS that's modular and scalable</a></li>
-              <li><a href="http://thesassway.com/advanced/modular-css-naming-conventions" target="_blank">Modular CSS Naming Conventions</a></li>
-            </ul>
-          </small>
+          <p>A Short &amp; Lovely Demo</p>
         </section>
       </section>
 
@@ -3773,23 +3414,15 @@ $tablet-port: "screen and (min-width: 768px)";
       <section>
         <section>
           <h2>Section - VII</h2>
-          <p>A Short &amp; Lovely Demo</p>
-        </section>
-      </section>
-
-      <!-- Section 8 -->
-      <section>
-        <section>
-          <h2>Section - VIII</h2>
           <p>Wrap Up</p>
         </section>
         <!-- Wrap Up : Compass -->
         <section>
           <h3><span class="white">Libraries</span> Compass</h3>
-          <a href="http://compass-style.org/" target="_blank"><img class="box" src="img/compass.png" style="border: none; box-shadow: none;" /></a>
+          <a href="http://compass-style.org/" target="_blank"><img class="box--small" src="img/compass.png" style="border: none; box-shadow: none;" /></a>
           <p class="copy--small">"Compass is an open-source CSS Authoring Framework." ~ <a href="http://compass-style.org/" target="
           _blank">Compass</a></p>
-          <ul class="box">
+          <ul>
             <li><span class="yellow">CSS3</span> mixins!</li>
             <li><span class="green">Typography</span> pattern tools.</li>
             <li>Lots of other utilities!</li>
@@ -3799,10 +3432,10 @@ $tablet-port: "screen and (min-width: 768px)";
         <!-- Wrap Up : Bourbon -->
         <section>
           <h3><span class="white">Libraries</span> Bourbon</h3>
-          <a href="http://bourbon.io/" target="_blank"><img class="box" src="img/bourbon.png" style="border: none; box-shadow: none;" /></a>
-          <p class="copy--small">"A simple and lightweight mixin library for Sass." ~ <a href="http://bourbon.io/" target="
+          <a href="http://bourbon.io/" target="_blank"><img class="box--small" src="img/bourbon.png" style="border: none; box-shadow: none;" /></a>
+          <p>"A simple and lightweight mixin library for Sass." ~ <a href="http://bourbon.io/" target="
           _blank">Bourbon</a></p>
-          <ul class="box">
+          <ul>
             <li><span class="yellow">CSS3</span> mixins!</li>
             <li><span class="green">Vanilla</span> styles.</li>
             <li>Super slim.</li>
@@ -3815,7 +3448,7 @@ $tablet-port: "screen and (min-width: 768px)";
           <h3><span class="white">Libraries</span> Susy</h3>
           <p class="box"><a href="http://susy.oddbird.net/" target="_blank"><img src="img/susy.png" style="padding: 0;" /></a></p>
           <p class="copy--small">"Responsive grids for Compass." ~ <a href="http://susy.oddbird.net/" target="_blank">Susy</a></p>
-          <ul class="box">
+          <ul>
             <li><span class="yellow">Grid</span> mixins!</li>
             <li>Very flexible.</li>
           </ul>
@@ -3855,6 +3488,20 @@ $tablet-port: "screen and (min-width: 768px)";
               <a href="http://thesassway.com/" target="_blank">The Sass Way</a> guides
             </li>
           </ul>
+        </section>
+
+        <section>
+          <h3>Cool Stuff!</h3>
+          <div>
+            <p>Play around with this cool stuff:</p>
+            <ul>
+              <li><a target="_blank" href="https://github.com/roytomeij/sassconf">https://github.com/roytomeij/sassconf</a></li>
+              <li><a target="_blank" href="http://codepen.io/bpainter/pen/nJuHk">http://codepen.io/bpainter/pen/nJuHk</a></li>
+              <li><a target="_blank" href="http://codepen.io/bpainter/pen/LaquJ">http://codepen.io/bpainter/pen/LaquJ</a></li>
+              <li><a target="_blank" href="http://codepen.io/bpainter/pen/mIvjx">http://codepen.io/bpainter/pen/mIvjx</a></li>
+              <li><a target="_blank" href="http://codepen.io/bpainter/pen/Fdpxs">http://codepen.io/bpainter/pen/Fdpxs</a></li>
+            </ul>
+          </div>
         </section>
 
         <!-- Wrap Up: Sass Questions? -->
