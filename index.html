@@ -99,7 +99,7 @@
         <section>
           <h3>Repetition</h3>
           <div class="pull-left" style="width:50%;">
-            <pre><code>.header {
+            <pre><code contenteditable class="css">.header {
   background-color: #531946;
   border-radius: 5px;
   padding: 5px 20px;
@@ -154,7 +154,7 @@
           <h3>Repetition <span class="white">Colors</span></h3>
           <div class="pull-left" style="width:49%;">
             <strong class="white-red-bg">CSS</strong>
-            <pre><code class="css">.header {
+            <pre><code contenteditable class="css">.header {
   background-color: #531946;
 }
 .header a {
@@ -191,7 +191,7 @@
           </div>
           <div class="pull-left fragment visible" style="width:49%;">
             <strong class="red-white-bg">Sass Variables</strong>
-            <pre><code class="sass">$white: #ffffff;
+            <pre><code contenteditable class="sass">$white: #ffffff;
 $black: #222222; // NOT! ;)
 $eggplant: #531946;
 $eggplantDark: #30162B;
@@ -237,7 +237,7 @@ $teal: #095169;
           <h4>Repetition <span class="white">Border Radius &amp; Padding</span></h4>
           <div class="pull-left" style="width:49%;">
             <strong class="white-red-bg">CSS</strong>
-            <pre><code class="css">.header {
+            <pre><code contenteditable class="css">.header {
   border-radius: 5px;
   padding: 5px 20px;
   /* ... */
@@ -263,7 +263,7 @@ $teal: #095169;
           </div>
           <div class="pull-left fragment visible" style="width:49%;">
             <strong class="red-white-bg">Sass Mixins</strong>
-            <pre><code class="sass">@mixin rounded-box {
+            <pre><code contenteditable class="sass">@mixin rounded-box {
   border-radius: 5px;
   padding: 5px 20px;
 }
@@ -293,7 +293,7 @@ $teal: #095169;
           <h3>Repetition <span class="white">Selectors</span></h3>
           <div class="pull-left" style="width:49%;">
             <strong class="white-red-bg">CSS</strong>
-            <pre><code class="css">.header {
+            <pre><code contenteditable class="css">.header {
   /* ... */
 }
 .header a {
@@ -326,7 +326,7 @@ $teal: #095169;
           </div>
           <div class="pull-left fragment visible" style="width:49%;">
             <strong class="red-white-bg">Sass Nesting</strong>
-            <pre><code class="sass">.header {
+            <pre><code contenteditable class="sass">.header {
   // ...
 
   a {
@@ -367,7 +367,7 @@ $teal: #095169;
           <h3>Recap <span class="white">Repetition</span></h3>
           <div class="pull-left" style="width:49%;">
             <strong class="white-red-bg">CSS</strong>
-            <pre><code class="css">.header {
+            <pre><code contenteditable class="css">.header {
   background-color: #531946;
   border-radius: 5px;
   padding: 5px 20px;
@@ -411,7 +411,7 @@ $teal: #095169;
           </div>
           <div class="pull-left" style="width:49%;">
             <strong class="red-white-bg">Sass</strong>
-            <pre><code class="sass">$white:        #ffffff;
+            <pre><code contenteditable class="sass">$white:        #ffffff;
 $grey:         #222222;
 $eggplant:     #531946;
 $eggplantDark: #30162B;
@@ -507,7 +507,7 @@ $teal:         #095169;
           <div class="pull-left" style="width:49%;">
             <strong class="yellow">.sass (Indented)</strong>
             <small>Original syntax; Haml-esque</small>
-            <pre><code class="sass">$black: #000
+            <pre><code contenteditable class="sass">$black: #000
 $white: #fff
 
 .this
@@ -526,7 +526,7 @@ $white: #fff
           <div class="pull-right" style="width:49%;">
             <strong class="orange">.scss (Sassy CSS)</strong>
             <small>Default syntax; Valid CSS == Valid SCSS</small>
-            <pre><code class="scss">$black: #000;
+            <pre><code contenteditable class="scss">$black: #000;
 $white: #fff;
 
 .this {
@@ -1160,7 +1160,7 @@ a .btn {
               </ul>
               <ul class="pull-left padding-top-30">
                 <li>An <span class="yellow">_underscore</span> creates a partial</li>
-                <li>Partials will not compile to <code>.css</code> on their own, they <span class="yellow">must be <code>@import</code>ed</span></li>
+                <li>Partials will not compile to <code class="command">.css</code> on their own, they <span class="yellow">must be <code class="command">@import</code>ed</span></li>
                 <li>Partials allow us to break up our code into more <span class="yellow">modular, maintainable chunks</span>!</li>
               </ul>
             </small>
@@ -1173,7 +1173,7 @@ a .btn {
           <div class="pull-left" style="width: 48%">
             <h4 class="yellow">Common Practices</h4>
             <small>
-              <ul class="list--tall box--small copy--small">
+              <ul>
                 <li><code class="command">_vars.scss</code> is a separate sheet for all your variables and settings</li>
                 <li><code class="command">lib</code> is a separate folder for other libraries</li>
                 <li><code class="command">modules</code> is a separate folder for various modules</li>
@@ -1323,7 +1323,7 @@ p {
           <h3><span class="white">Variable</span> Data Types</h3>
           <div class="pull-left" style="width:35%;">
             <h4 class="yellow">Types</h4>
-            <ul class="list--tall">
+            <ul>
               <li>Numbers</li>
               <li>Strings</li>
               <li>Colors</li>
@@ -1407,7 +1407,7 @@ p {
             <p>
               <small>If they're defined outside of any nested selectors, they're available everywhere.</small>
             </p>
-            <p class="box--small"><cite><small>~ <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variables_" target="_blank">Sass Documentation</a></small></cite></p>
+            <p class="box-small"><cite><small>~ <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variables_" target="_blank">Sass Documentation</a></small></cite></p>
           </div>
         </section>
 
@@ -1562,18 +1562,18 @@ $feature__link--color--hover: $eggplant;
               <ul>
                 <li>Sass allows us to do <span class="yellow">basic math operations</span>*, like:
                   <ul>
-                    <li><code>+</code> addition</li>
-                    <li><code>-</code> subtraction</li>
-                    <li><code>*</code> multiplication</li>
-                    <li><code>/</code> division</li>
-                    <li><code>%</code> modulus<br /><small>(remainder from division)</small></li>
+                    <li><code class="command">+</code> addition</li>
+                    <li><code class="command">-</code> subtraction</li>
+                    <li><code class="command">*</code> multiplication</li>
+                    <li><code class="command">/</code> division</li>
+                    <li><code class="command">%</code> modulus<br /><small>(remainder from division)</small></li>
                   </ul>
                 </li>
                 <li>AND <span class="yellow">string concatenation</span></li>
               </ul>
             </small>
             <p><small class="white">* Sass attempts to operate on mismatched units, but will throw an error if incompatible</small></p>
-            <p><small><span class="yellow">Good:</span> <code>20px * 2</code> &nbsp; | &nbsp; <span class="red">Bad:</span> <code>20px + 4em</code></small></p>
+            <p><small><span class="yellow">Good:</span> <code class="command">20px * 2</code> &nbsp; | &nbsp; <span class="red">Bad:</span> <code class="command">20px + 4em</code></small></p>
           </div>
           <div class="pull-right" style="width: 48%">
             <pre><code contenteditable class="scss">$title: "SassShop";
@@ -1600,15 +1600,15 @@ $padding-default: 2em;
         <section>
           <h3><span class="white">Math</span> Division</h3>
           <small>
-            <p>CSS allows <code>/</code> to be used for separating values.</p>
+            <p>CSS allows <code class="command">/</code> to be used for separating values.</p>
             <p><code class="command">font: normal 1.5em/1.25 Tahoma, Arial, sans-serif;</code></p>
             <p>SassScript maintains this support.<br/>
               <strong>There are three ways to <span class="yellow">trigger division:</span></strong>
             </p>
             <ul>
-              <li>If any part of the equation is a <span class="orange">variable</span>: <code>$padding / 2</code></li>
-              <li>If the equation is surrounded by <span class="orange">parentheses</span>: <code>(350 / .25)</code></li>
-              <li>If the equation involves <span class="orange">another expression</span>: <code>2 + 3 / 10</code></li>
+              <li>If any part of the equation is a <span class="orange">variable</span>: <code class="command">$padding / 2</code></li>
+              <li>If the equation is surrounded by <span class="orange">parentheses</span>: <code class="command">(350 / .25)</code></li>
+              <li>If the equation involves <span class="orange">another expression</span>: <code class="command">2 + 3 / 10</code></li>
             </ul>
           </small>
         </section>
@@ -2387,7 +2387,7 @@ $icon-minus: "\e601";
         <section>
           <h3><span class="white">Inheritance</span> Placeholders</h3>
           <p>
-            <small><strong>Placeholders</strong> are a special type of selector denoted by a <code>%</code>. They can be <code>@extend</code>ed but will never compile to the CSS on their own.</small>
+            <small><strong>Placeholders</strong> are a special type of selector denoted by a <code class="command">%</code>. They can be <code class="command">@extend</code>ed but will never compile to the CSS on their own.</small>
           </p>
           <div class="pull-left" style="width: 48%">
             <strong class="red-white-bg">Sass</strong>
@@ -2745,8 +2745,8 @@ article header, .article .header, [class*='rabbit'], .party .at .codemash,
             <p>
               <small>
                 <ul class="ul-space">
-                  <li>We <span class="yellow">define</span> a function with the <code>@function</code> directive.</li>
-                  <li>We <span class="yellow">return a value</span> with the <code>@return</code> directive.</li>
+                  <li>We <span class="yellow">define</span> a function with the <code class="command">@function</code> directive.</li>
+                  <li>We <span class="yellow">return a value</span> with the <code class="command">@return</code> directive.</li>
                   <li>We <span class="yellow">call</span> a function by it's <span class="white">name and parens</span>, passing arguments if needed.</li>
                   <li><em>Functions must be defined before they're referenced</em>.</li>
                   <li>Functions accept <span class="yellow">arguments</span>, they have the same rules as mixins (ie. defaults, order, keyword args, etc.)</li>
@@ -2783,23 +2783,23 @@ body {
           <div class="pull-right" style="width: 47%">
             <small>
               <ul class="ul-space">
-                <li>We <span class="yellow">begin</span> a conditon with the <code>@if</code> directive, then give it a <span class="yellow">comparison to evaluate</span></li>
-                <li>We have <code>@else if</code> for <span class="yellow">additional comparisons</span></li>
-                <li>And <code>@else</code> as a <span class="yellow">fallback</span> if all prior comparisons evaluate to <code>null</code> or <code>false</code></li>
+                <li>We <span class="yellow">begin</span> a conditon with the <code class="command">@if</code> directive, then give it a <span class="yellow">comparison to evaluate</span></li>
+                <li>We have <code class="command">@else if</code> for <span class="yellow">additional comparisons</span></li>
+                <li>And <code class="command">@else</code> as a <span class="yellow">fallback</span> if all prior comparisons evaluate to <code class="command">null</code> or <code class="command">false</code></li>
               </ul>
             </small>
             <div>
               <small>
                 <p><span class="white">Comparators include:</span><br /><small>* only compare numbers</small></p>
                 <ul class="pull-left" style="width: 43%">
-                  <li><code>==</code> equal to</li>
-                  <li><code>&gt;</code> greater than *</li>
-                  <li><code>&gt;=</code> greater than or equal to *</li>
+                  <li><code class="command">==</code> equal to</li>
+                  <li><code class="command">&gt;</code> greater than *</li>
+                  <li><code class="command">&gt;=</code> greater than or equal to *</li>
                 </ul>
                 <ul class="pull-right" style="width: 43%">
-                  <li><code>!=</code> not equal to</li>
-                  <li><code>&lt;</code> less than *</li>
-                  <li><code>&lt;=</code> less than or equal to *</li>
+                  <li><code class="command">!=</code> not equal to</li>
+                  <li><code class="command">&lt;</code> less than *</li>
+                  <li><code class="command">&lt;=</code> less than or equal to *</li>
                 </ul>
               </small>
             </div>
@@ -2911,10 +2911,10 @@ body {
           <div class="pull-right" style="width: 52%">
             <small>
               <ul>
-                <li>The <code>@while</code> <span class="green">directives</span> take the form of:
+                <li>The <code class="command">@while</code> <span class="green">directives</span> take the form of:
                   <small><ul><li><code class="command">@while &lt;comparison&gt;</code></li></ul></small>
                 </li>
-                <li>It will output styles until the comparison statement returns <code>false</code></li>
+                <li>It will output styles until the comparison statement returns <code class="command">false</code></li>
                 <li><em>You must manually update the variable you're comparing against</em></li>
                 <li>The <code class="command">&lt;comparison&gt;</code> variable will often be an integer that you increment, but it could be any data type that you modify as you go</li>
               </ul>
@@ -2944,7 +2944,7 @@ body {
               <ul>
                 <li>Maps must always be <span class="yellow">surrounded by parentheses.</span></li>
                 <li>Key-value pairs must always be <span class="yellow">comma separated</span>.</li>
-                <li>Maps can be <span class="yellow">looped through or accessed</span> via built-in <code>map</code> functions.</li>
+                <li>Maps can be <span class="yellow">looped through or accessed</span> via built-in <code class="command">map</code> functions.</li>
               </ul>
             </small>
           </div>
@@ -3019,7 +3019,7 @@ $font: (
         <!-- Advanced Sass : Putting it all together : Icons -->
         <section>
           <h3><span class="white">Advanced Sass</span> Icons</h3>
-          <div class="box--small">
+          <div class="box-small">
             <pre><code contenteditable class="scss">$icons: (
   checkmark: "\e600",
   plus:      "\e601",
@@ -3037,7 +3037,7 @@ $font: (
         <!-- Advanced Sass : Putting it all together : Modules -->
         <section>
           <h3><span class="white">Advanced Sass</span> Module Skins</h3>
-          <div class="box--small">
+          <div class="box-small">
             <pre><code contenteditable class="scss">$messages: (
   error:   (#d82d2d, #666),
   success: (#52bf4a, #fff),
@@ -3059,7 +3059,7 @@ $font: (
         <!-- Advanced Sass : Putting it all together : Z-Index -->
         <section>
           <h3><span class="white">Advanced Sass</span> Z-Indexes</h3>
-          <div class="box--small">
+          <div class="box-small">
             <pre><code contenteditable class="scss">$layers: (
   bottom: 1,
   middle: 5,
@@ -3083,7 +3083,7 @@ $font: (
         <!-- Advanced Sass : Putting it all together : Font Sizes -->
         <section>
           <h3><span class="white">Advanced Sass</span> Font Sizes</h3>
-          <div class="box--small">
+          <div class="box-small">
             <pre><code contenteditable class="scss">$font--sizes: (
   ( base,  $base-font-size,     $base-line-height ),
   ( small, $base-font-size*.75, $base-line-height*.75 ),
@@ -3111,7 +3111,7 @@ $font: (
         <!-- Advanced Sass : Putting it all together : Theming -->
         <section>
           <h3><span class="white">Advanced Sass</span> Theming</h3>
-          <div class="box--small">
+          <div class="box-small">
             <pre><code contenteditable class="scss">$themes: (
   gray: (
     button-bg: #ccc,
@@ -3419,8 +3419,8 @@ $tablet-port: "screen and (min-width: 768px)";
         <!-- Wrap Up : Compass -->
         <section>
           <h3><span class="white">Libraries</span> Compass</h3>
-          <a href="http://compass-style.org/" target="_blank"><img class="box--small" src="img/compass.png" style="border: none; box-shadow: none;" /></a>
-          <p class="copy--small">"Compass is an open-source CSS Authoring Framework." ~ <a href="http://compass-style.org/" target="
+          <a href="http://compass-style.org/" target="_blank"><img class="box-small" src="img/compass.png" style="border: none; box-shadow: none;" /></a>
+          <p>"Compass is an open-source CSS Authoring Framework." ~ <a href="http://compass-style.org/" target="
           _blank">Compass</a></p>
           <ul>
             <li><span class="yellow">CSS3</span> mixins!</li>
@@ -3432,7 +3432,7 @@ $tablet-port: "screen and (min-width: 768px)";
         <!-- Wrap Up : Bourbon -->
         <section>
           <h3><span class="white">Libraries</span> Bourbon</h3>
-          <a href="http://bourbon.io/" target="_blank"><img class="box--small" src="img/bourbon.png" style="border: none; box-shadow: none;" /></a>
+          <a href="http://bourbon.io/" target="_blank"><img class="box-small" src="img/bourbon.png" style="border: none; box-shadow: none;" /></a>
           <p>"A simple and lightweight mixin library for Sass." ~ <a href="http://bourbon.io/" target="
           _blank">Bourbon</a></p>
           <ul>
@@ -3447,7 +3447,7 @@ $tablet-port: "screen and (min-width: 768px)";
         <section>
           <h3><span class="white">Libraries</span> Susy</h3>
           <p class="box"><a href="http://susy.oddbird.net/" target="_blank"><img src="img/susy.png" style="padding: 0;" /></a></p>
-          <p class="copy--small">"Responsive grids for Compass." ~ <a href="http://susy.oddbird.net/" target="_blank">Susy</a></p>
+          <p>"Responsive grids for Compass." ~ <a href="http://susy.oddbird.net/" target="_blank">Susy</a></p>
           <ul>
             <li><span class="yellow">Grid</span> mixins!</li>
             <li>Very flexible.</li>
@@ -3457,7 +3457,7 @@ $tablet-port: "screen and (min-width: 768px)";
         <!-- Wrap Up : More -->
         <section>
           <h3><span class="white">Libraries</span> A Few More</h3>
-          <ul class="box list--tall copy--small">
+          <ul>
             <li><a href="https://github.com/JohnAlbin/normalize.css-with-sass-or-compass" target="_blank">Normalize.css w/ Sass or Compass</a></li>
             <li><a href="https://github.com/Team-Sass/modular-scale" target="_blank">Modular Scale</a> (Compass Extension)</li>
             <li><a href="http://breakpoint-sass.com/" target="_blank">Breakpoint</a> (Compass Extension)</li>
@@ -3469,7 +3469,7 @@ $tablet-port: "screen and (min-width: 768px)";
         <!-- Wrap Up : Tools -->
         <section>
           <h3><span class="white">Tools</span> GUIs</h3>
-          <ul class="box list--tall">
+          <ul class="box">
             <li><a target="_blank" href="http://incident57.com/codekit/">CodeKit</a> (OS X)<br /><small>"It's like steroids for developers."</small></li>
             <li><a target="_blank" href="http://compass.kkbox.com/">Compass.app</a><br /><small>Compilation + live reload from the menubar.</small></li>
             <li><a target="_blank" href="http://mhs.github.io/scout-app/">Scout</a><br /><small>Self-contained Ruby environment.</small></li>
