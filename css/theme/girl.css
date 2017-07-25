@@ -412,3 +412,6 @@ ul.ul-space li {
 .reveal .box-small {
     margin: 1em 0;
 }
+.no-text-transform {
+  text-transform: none!important;
+}
