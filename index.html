@@ -2103,7 +2103,7 @@ $padding-default: 2em;
           </div>
         </section>
 
-        <!-- Advanced Sass : Mixins : Example - Icons -->
+        <!-- Advanced Sass : Mixins : Example - Icons 
         <section>
           <h3><span class="white">Mixins</span> Icon Content</h3>
           <div class="pull-left" style="width: 100%">
@@ -2120,9 +2120,9 @@ $icon-minus: "\e601";
   @include icon($icon-plus);
 }</code></pre>
           </div>
-        </section>
+        </section>-->
 
-        <!-- Advanced Sass : Mixins : Example - Shapes -->
+        <!-- Advanced Sass : Mixins : Example - Shapes 
         <section>
           <h3><span class="white">Mixins</span> Complex Shapes</h3>
           <div class="pull-left" style="width: 100%">
@@ -2179,7 +2179,7 @@ $icon-minus: "\e601";
 
 .thing:before { @include triangle("up", #eeeeee, 25px); }</code></pre>
           </div>
-        </section>
+        </section>-->
 
         <!-- Advanced Sass : Inheritance -->
         <section>
@@ -2441,69 +2441,15 @@ $icon-minus: "\e601";
           </div>
         </section>
 
-        <!-- Advanced Sass : Inheritance : Example - Cross-Module Patterns -->
-        <section>
-          <h3><span class="white">@extend</span> Cross-Module Patterns</h3>
-          <div>
-            <pre><code contenteditable class="scss">%hoverTransition {
-  transition-property: background, color, font-size, line-height, opacity, border, padding, margin;
-  transition-duration: .1s;
-  transition-timing-function: linear;
-}
-
-%disabled {
-  @include opacity(.5);
-  cursor: not-allowed;
-}
-
-%muted {
-  @include opacity(.3);
-}</code></pre>
-          </div>
-        </section>
-
-        <!-- Advanced Sass : Inheritance : Example - Font Families -->
-        <section>
-          <h3><span class="white">@extend</span> Font Families</h3>
-          <div>
-            <pre><code contenteditable class="scss">%font--main--family { font-family: $focus-font-family; letter-spacing: .015em; }
-
-%font--main         { @extend %font--focus--family; font-weight: 500; }
-
-%font--main--medium { @extend %font--focus--family; font-weight: 600; }
-
-%font--main--bold   { @extend %font--focus--family; font-weight: 700; }
-
-%font--main--black  { @extend %font--focus--family; font-weight: 800; }</code></pre>
-          </div>
-        </section>
-
-        <!-- Advanced Sass : Inheritance : Example - Font Sizes -->
-        <section>
-          <h3><span class="white">@extend</span> Font Sizes</h3>
-          <div>
-            <pre><code contenteditable class="scss">%copy--small {
-  font-size: $font-size-small;
-  line-height: $line-height-small;
-}
-
-%copy--medium {
-  font-size: $font-size-medium;
-  line-height: $line-height-medium;
-}
-
-%copy--large {
-  font-size: $font-size-large;
-  line-height: $line-height-large;
-}</code></pre>
-          </div>
-        </section>
-
         <!-- Advanced Sass : Mixins : Example - Modules -->
         <section>
           <h3><span class="white">@extend</span> Module Setup</h3>
           <div>
-            <pre><code contenteditable class="scss">%btn--primary {
+            <pre><code contenteditable class="scss">%btn {
+    // ...
+}
+
+%btn--primary {
   background: $btn--primary--bg;
   border-color: $btn--primary--border;
   color: $btn--primary--color;
@@ -2662,55 +2608,6 @@ article header, .article .header, [class*='rabbit'], .party .at .codemash,
           </div>
         </section>
 
-        <!-- Advanced Sass : Inheritance : Versus Mixins -->
-        <section>
-          <h3><span class="white">@mixin</span> VS <span class="white">@extend</span></h3>
-          <div>
-            <small>
-              Is this actually bad?? ....what if it's <strong class="white">gzipped</strong>?</small>
-            </small>
-          </div>
-
-          <div >
-            <h4 class="yellow">@include Output</h4>
-            <pre><code contenteditable class="css">.header {
-  border-radius: 5px;
-  padding: 5px 20px;
-}
-
-.footer {
-  border-radius: 5px;
-  padding: 5px 20px;
-}
-
-.feature a {
-  border-radius: 5px;
-  padding: 5px 20px;
-}
-
-.content {
-  border-radius: 5px;
-  padding: 5px 20px;
-}</code></pre>
-          </div>
-        </section>
-
-        <!-- Advanced Sass : Inheritance : Versus Mixins -->
-        <section>
-          <h3><span class="white">@mixin</span> VS <span class="white">@extend</span></h3>
-          <div>
-            <p>It's complicated.</p>
-            <small>
-              <ul class="ul-space">
-                <li>In the beginning... mixins with variable arguments were good<a href="http://roytomeij.com/blog/2013/should-you-use-a-sass-mixin-or-extend.html">roytomeij.com/blog/2013/should-you-use-a-sass-mixin-or-extend.html</a></li>
-                <li>Now... not so much... <a href="http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin">csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/</a></li>
-                <li>It's been a whole year... </li>
-                <li>So... things are rapidly changing and progressing in the Sass community</li>
-              </ul>
-            </small>
-          </div>
-        </section>
-
         <!-- Advanced Sass : Directives -->
         <section>
           <h3>Advanced Sass</h3>
@@ -2793,13 +2690,13 @@ body {
                 <p><span class="white">Comparators include:</span><br /><small>* only compare numbers</small></p>
                 <ul class="pull-left" style="width: 43%">
                   <li><code class="command">==</code> equal to</li>
-                  <li><code class="command">&gt;</code> greater than *</li>
-                  <li><code class="command">&gt;=</code> greater than or equal to *</li>
+                  <li><code class="command">&gt;</code> greater than</li>
+                  <li><code class="command">&gt;=</code> greater than or equal to</li>
                 </ul>
                 <ul class="pull-right" style="width: 43%">
                   <li><code class="command">!=</code> not equal to</li>
-                  <li><code class="command">&lt;</code> less than *</li>
-                  <li><code class="command">&lt;=</code> less than or equal to *</li>
+                  <li><code class="command">&lt;</code> less than</li>
+                  <li><code class="command">&lt;=</code> less than or equal to</li>
                 </ul>
               </small>
             </div>
@@ -3339,65 +3236,6 @@ $tablet-port: "screen and (min-width: 768px)";
               <small>The <span class="yellow"><code class="command">@content</code> directive</span> allows us to pass entire blocks of styles to a mixin, which then outputs that content back into the declaration that called the mixin.</small>
             </p>
             <p class="yellow">WAT?</p>
-          </div>
-        </section>
-
-        <!-- Media Queries : @extend -->
-        <section>
-          <h3><span class="white">Media Query</span> @extended</h3>
-          <div>
-            <p>Class &amp; placeholder declarations created outside of<br />a media query cannot be <code class="command">@extend</code>ed within it :(</p>
-            <p>Output can get rather lengthy :(</p>
-          </div>
-        </section>
-
-        <!-- Media Queries : Output -->
-        <section>
-          <h3><span class="white">Media Query</span> Output</h3>
-          <div class="pull-left" style="width: 56%">
-            <pre><code contenteditable class="css">.sidebar {
-  float: left;
-  width: 35%;
-}
-
-@media only screen and (max-width: 760px) {
-  .sidebar {
-    width: 25%;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .sidebar {
-    float: none;
-    width: 100%;
-  }
-  .sidebar a {
-    display: block;
-  }
-}
-
-.footer {
-  height: 100px;
-}
-
-@media only screen and (max-width: 760px) {
-  .footer {
-    height: 75px;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .footer {
-    height: 50px;
-  }
-}</code></pre>
-          </div>
-          <div class="pull-right" style="width: 42%">
-            <small>
-              <p>Sass doesn't group like media queries.</p>
-              <p class="yellow">Sometimes it's best <em>not</em> to nest your media queries so granularly.</p>
-              <p class="white">Keep an eye on your output!</p>
-            </small>
           </div>
         </section>
       </section>
